@@ -1,0 +1,519 @@
+/* ========================================
+   🏆 SEÇÃO FOUNDER 500 V10 (CLEAN & LIGHT)
+   ======================================== */
+
+.founder-section-v10 {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--ghost-white) 100%);
+}
+
+/* Header */
+.founder-header-v10 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.founder-badge-v10 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(217, 4, 22, 0.1);
+  border: 2px solid var(--flag-red);
+  color: var(--flag-red);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.founder-title-v10 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--ink-black);
+  margin-bottom: 16px;
+}
+
+.founder-subtitle-v10 {
+  font-size: 1.15rem;
+  color: var(--ink-black-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contador Principal */
+.founder-counter-v10 {
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.counter-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(11, 18, 32, 0.08);
+  border: 2px solid var(--ghost-white-darker);
+}
+
+.counter-main {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.counter-number {
+  display: block;
+  font-size: clamp(5rem, 10vw, 7rem);
+  font-weight: 900;
+  color: var(--flag-red);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.counter-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  letter-spacing: 2px;
+}
+
+.counter-progress {
+  width: 100%;
+}
+
+.progress-bar-v10 {
+  width: 100%;
+  height: 12px;
+  background: var(--ghost-white-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill-v10 {
+  height: 100%;
+  background: linear-gradient(90deg, var(--flag-red) 0%, #ff1744 100%);
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.progress-text-v10 {
+  display: block;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--ink-black-light);
+}
+
+/* 3 Benefícios Resumidos */
+.benefits-grid-v10 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.benefit-card-v10 {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 2px solid var(--ghost-white-darker);
+  transition: all 0.3s ease;
+}
+
+.benefit-card-v10:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(11, 18, 32, 0.12);
+  border-color: var(--flag-red);
+}
+
+.benefit-icon-v10 {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(217, 4, 22, 0.1) 0%, rgba(217, 4, 22, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.benefit-icon-v10 i {
+  font-size: 2rem;
+  color: var(--flag-red);
+}
+
+.benefit-card-v10 h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 12px;
+}
+
+.benefit-card-v10 p {
+  font-size: 1rem;
+  color: var(--ink-black-light);
+  line-height: 1.5;
+}
+
+/* CTAs */
+.founder-cta-v10 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-founder-v10 {
+  padding: 20px 50px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--flag-red) 0%, #ff1744 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(217, 4, 22, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-founder-v10:hover {
+  background: linear-gradient(135deg, #ff1744 0%, var(--flag-red) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(217, 4, 22, 0.4);
+}
+
+.cta-secondary-v10 {
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--flag-red);
+  border: 2px solid var(--flag-red);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary-v10:hover {
+  background: var(--flag-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 4, 22, 0.2);
+}
+
+/* ========================================
+   MODAL FOUNDER DETAILS
+   ======================================== */
+
+.modal-founder-details {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 18, 32, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.modal-founder-details.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-founder-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(11, 18, 32, 0.3);
+  position: relative;
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--ghost-white-dark);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: var(--flag-red);
+  color: #FFFFFF;
+  transform: rotate(90deg);
+}
+
+.modal-close-btn i {
+  font-size: 1.2rem;
+}
+
+/* Modal Header */
+.modal-founder-header {
+  background: linear-gradient(135deg, var(--ghost-white) 0%, #FFFFFF 100%);
+  padding: 50px 40px 40px;
+  text-align: center;
+  border-bottom: 2px solid var(--ghost-white-darker);
+}
+
+.modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(217, 4, 22, 0.1);
+  border: 2px solid var(--flag-red);
+  color: var(--flag-red);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.modal-founder-header h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--ink-black);
+  margin-bottom: 12px;
+}
+
+.modal-founder-header p {
+  font-size: 1rem;
+  color: var(--ink-black-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Modal Body */
+.modal-founder-body {
+  padding: 40px;
+}
+
+.modal-benefit-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--ghost-white-darker);
+}
+
+.modal-benefit-item:last-child {
+  border-bottom: none;
+}
+
+.modal-benefit-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(217, 4, 22, 0.1) 0%, rgba(217, 4, 22, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-benefit-icon i {
+  font-size: 1.75rem;
+  color: var(--flag-red);
+}
+
+.modal-benefit-content {
+  flex: 1;
+}
+
+.modal-benefit-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 8px;
+}
+
+.benefit-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--flag-red);
+  margin-bottom: 12px;
+}
+
+.modal-benefit-content p {
+  font-size: 1rem;
+  color: var(--ink-black-light);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.benefit-tag-modal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(217, 4, 22, 0.1);
+  border: 1px solid var(--flag-red);
+  color: var(--flag-red);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.benefit-note {
+  font-size: 0.85rem;
+  color: var(--ink-black-light);
+  opacity: 0.7;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Modal Comparison */
+.modal-comparison {
+  margin-top: 40px;
+  padding: 30px;
+  background: var(--ghost-white);
+  border-radius: 12px;
+  border: 2px solid var(--ghost-white-darker);
+}
+
+.modal-comparison h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink-black);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.comparison-table-modal {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table-modal thead {
+  background: var(--ink-black);
+  color: #FFFFFF;
+}
+
+.comparison-table-modal th {
+  padding: 16px 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.comparison-table-modal td {
+  padding: 16px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--ghost-white-darker);
+}
+
+.comparison-table-modal td.feature {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink-black);
+}
+
+.comparison-table-modal tbody tr:hover {
+  background: rgba(217, 4, 22, 0.05);
+}
+
+.comparison-table-modal i.fa-check {
+  color: var(--success);
+  font-size: 1.2rem;
+}
+
+.comparison-table-modal i.fa-times {
+  color: var(--ink-black-lighter);
+  opacity: 0.3;
+  font-size: 1.2rem;
+}
+
+.comparison-table-modal i.fa-infinity {
+  color: var(--flag-red);
+  font-size: 1.2rem;
+}
+
+/* Modal Footer */
+.modal-founder-footer {
+  padding: 30px 40px;
+  background: var(--ghost-white);
+  border-top: 2px solid var(--ghost-white-darker);
+  text-align: center;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+  .founder-title-v10 {
+    font-size: 2rem;
+  }
+
+  .counter-number {
+    font-size: 4rem;
+  }
+
+  .benefits-grid-v10 {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-cta-v10 {
+    width: 100%;
+  }
+
+  .cta-founder-v10,
+  .cta-secondary-v10 {
+    width: 100%;
+  }
+
+  .modal-benefit-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-founder-header,
+  .modal-founder-body,
+  .modal-founder-footer {
+    padding: 30px 20px;
+  }
+
+  .comparison-table-modal {
+    font-size: 0.85rem;
+  }
+
+  .comparison-table-modal th,
+  .comparison-table-modal td {
+    padding: 12px 8px;
+  }
+}

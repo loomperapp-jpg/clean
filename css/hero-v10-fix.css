@@ -1,0 +1,33 @@
+/* ========================================
+   🎨 HERO V10 - VERMELHO VIBRANTE FIX
+   ======================================== */
+
+/* Botão Primário - Vermelho Vibrante (Crimson) */
+.cta-primary {
+  background: linear-gradient(135deg, #DC143C 0%, #C41230 100%) !important;
+  color: #FFFFFF;
+  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.35) !important;
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, #FF1744 0%, #DC143C 100%) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 48px rgba(220, 20, 60, 0.50) !important;
+}
+
+.cta-primary:active {
+  transform: translateY(-1px) scale(1.01) !important;
+  box-shadow: 0 6px 24px rgba(220, 20, 60, 0.40) !important;
+}
+
+/* Hero Title - Mais impacto visual */
+.hero-title {
+  text-shadow: 2px 4px 12px rgba(11, 18, 32, 0.15);
+}
+
+/* Highlight Text - Vermelho vibrante */
+.highlight-text {
+  color: #DC143C;
+  font-weight: 700;
+}
