@@ -3,151 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade | Loomper</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <title>Política de Privacidade | Loomper Connect</title>
+    <link rel="icon" type="image/png" href="assets/images/FAVICON_Loomper.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Design System (Padrão Loomper) */
-        :root {
-            --dark-bg: #0a1628;
-            --dark-card: #151f32;
-            --gold: #D4AF37;
-            --orange: #FF6600;
-            --white: #ffffff;
-            --text-gray: #b0b0b0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        
-        body { 
-            background-color: var(--dark-bg); 
-            color: var(--text-gray); 
-            line-height: 1.8; 
-            font-size: 16px;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8F8FF;
+            color: #0B1220;
+            line-height: 1.6;
         }
-
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
-
-        /* Botão Voltar */
-        .btn-back {
+        header {
+            background: #1D3557;
+            color: #F8F8FF;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .back-link {
             display: inline-block;
-            margin-bottom: 30px;
-            color: var(--orange);
+            margin-bottom: 20px;
+            color: #1D3557;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
         }
-        .btn-back:hover { color: var(--gold); padding-left: 5px; }
-
-        /* Card do Documento */
-        .doc-card {
-            background: var(--dark-card);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .back-link:hover {
+            color: #D90416;
         }
-
-        /* Cabeçalho do Doc */
-        header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; }
-        h1 { color: var(--white); font-size: 2rem; margin-bottom: 10px; }
-        .subtitle { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Conteúdo */
-        h2 { color: var(--white); margin-top: 30px; margin-bottom: 15px; font-size: 1.2rem; border-left: 3px solid var(--orange); padding-left: 10px; }
-        p { margin-bottom: 15px; text-align: justify; }
-        ul { margin-bottom: 20px; padding-left: 20px; }
-        li { margin-bottom: 8px; list-style: disc; }
-        strong { color: var(--white); }
-        a { color: var(--gold); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        /* Rodapé do Doc */
-        .doc-footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.85rem;
+        h2 {
+            color: #1D3557;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #D90416;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            margin-bottom: 12px;
+        }
+        ul {
+            margin-left: 25px;
+        }
+        .highlight {
+            background: #FFD0D6;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background: #E8E8F0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #D90416;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #D0D0E0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #1D3557;
+            color: #F8F8FF;
+        }
+        footer {
+            background: #0B1220;
+            color: #F8F8FF;
+            padding: 30px 0;
             text-align: center;
-            color: #666;
-        }
-
-        @media (max-width: 600px) {
-            .doc-card { padding: 25px; }
-            h1 { font-size: 1.5rem; }
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Política de Privacidade - Loomper Connect</h1>
+        <p>Última atualização: Janeiro de 2026</p>
+    </header>
 
     <div class="container">
-        <a href="index.html" class="btn-back">← Voltar para o Início</a>
+        <a href="index.html" class="back-link">← Voltar para a página inicial</a>
 
-        <div class="doc-card">
-            <header>
-                <h1>Política de Privacidade</h1>
-                <p class="subtitle">Logística • Tecnologia • Pessoas</p>
-                <p style="text-align: center; font-size: 0.9rem; margin-top: 10px;">Versão Beta 1.0 (2025)</p>
-            </header>
-
-            <h2>1. Controlador dos Dados</h2>
-            <p>A <strong>Ajud.AI Brasil Inova Simples (I.S.)</strong>, inscrita no CNPJ nº 59.150.688/0001-39, controladora da plataforma Loomper, é a responsável pelo tratamento dos dados pessoais, nos termos da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD).</p>
-
-            <h2>2. Dados Coletados</h2>
-            <p>O Loomper coleta apenas os dados estritamente necessários para o funcionamento da plataforma, tais como:</p>
-            <ul>
-                <li>Nome, e-mail, telefone e perfil de atuação;</li>
-                <li>Informações fornecidas voluntariamente em formulários;</li>
-                <li>Dados necessários para comunicação e organização operacional.</li>
-            </ul>
-
-            <h2>3. Finalidade do Tratamento</h2>
-            <p>Os dados coletados são utilizados para:</p>
-            <ul>
-                <li>Viabilizar conexões entre usuários (Motoristas, Chapas e Empresas);</li>
-                <li>Permitir comunicação relacionada à plataforma;</li>
-                <li>Melhorar a experiência, segurança e evolução do Loomper;</li>
-                <li>Cumprir obrigações legais e regulatórias.</li>
-            </ul>
-
-            <h2>4. Compartilhamento de Dados</h2>
-            <p>Os dados poderão ser compartilhados exclusivamente entre usuários da plataforma, quando necessário para viabilizar conexões operacionais.</p>
-            <p><strong>O Loomper não comercializa dados pessoais.</strong></p>
-            <p>O compartilhamento com autoridades ocorrerá apenas quando estritamente exigido por lei.</p>
-
-            <h2>5. Armazenamento e Segurança</h2>
-            <p>O Loomper adota medidas técnicas e organizacionais razoáveis, seguindo padrões de mercado, para proteger os dados contra acesso não autorizado, perda ou uso indevido.</p>
-
-            <h2>6. Direitos do Titular</h2>
-            <p>Nos termos da LGPD, o usuário pode, a qualquer momento:</p>
-            <ul>
-                <li>Solicitar acesso aos seus dados;</li>
-                <li>Solicitar correção ou atualização das informações;</li>
-                <li>Solicitar exclusão, quando aplicável;</li>
-                <li>Revogar consentimentos concedidos anteriormente.</li>
-            </ul>
-            <p>Para exercer seus direitos, entre em contato pelo e-mail: <a href="mailto:contato@loomper.com.br">contato@loomper.com.br</a></p>
-
-            <h2>7. Atualizações da Política</h2>
-            <p>Esta Política poderá ser atualizada periodicamente para refletir melhorias e adequações legais. Recomendamos a consulta regular deste documento.</p>
-
-            <div class="doc-footer">
-                <p><strong>LOOMPER® — Marca Registrada</strong><br>
-                Uma empresa do Grupo Ajud.AI<br>
-                CNPJ: 59.150.688/0001-39 • São Bernardo do Campo - SP</p>
-            </div>
+        <div class="info-box">
+            <p><strong>📜 Conformidade LGPD:</strong> Esta Política de Privacidade está em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
         </div>
+
+        <h2>1. Introdução</h2>
+        <p>A <strong>Loomper Connect</strong>, pertencente ao Grupo Ajud.ai Brasil Inova Simples (I.S.), CNPJ 59.150.688/0001-39, respeita sua privacidade e está comprometida em proteger seus dados pessoais.</p>
+        <p>Esta Política descreve como coletamos, usamos, armazenamos e protegemos suas informações.</p>
+
+        <h2>2. Dados que Coletamos</h2>
+        <h3>2.1 Dados Pessoais Fornecidos por Você</h3>
+        <table>
+            <tr>
+                <th>Tipo de Dado</th>
+                <th>Exemplos</th>
+                <th>Finalidade</th>
+            </tr>
+            <tr>
+                <td>Identificação</td>
+                <td>Nome completo, CPF, RG, CNH</td>
+                <td>Cadastro e verificação de identidade</td>
+            </tr>
+            <tr>
+                <td>Contato</td>
+                <td>E-mail, telefone, WhatsApp</td>
+                <td>Comunicação e notificações</td>
+            </tr>
+            <tr>
+                <td>Localização</td>
+                <td>Endereço, UF, cidade</td>
+                <td>Conectar usuários por região</td>
+            </tr>
+            <tr>
+                <td>Profissionais</td>
+                <td>Experiência, qualificações, referências</td>
+                <td>Perfil profissional</td>
+            </tr>
+            <tr>
+                <td>Financeiros</td>
+                <td>Chave PIX (opcional)</td>
+                <td>Pagamentos (quando aplicável)</td>
+            </tr>
+        </table>
+
+        <h3>2.2 Dados Coletados Automaticamente</h3>
+        <ul>
+            <li><strong>Dados de uso:</strong> Interações com a plataforma, funcionalidades acessadas</li>
+            <li><strong>Dados técnicos:</strong> Endereço IP, tipo de dispositivo, navegador, sistema operacional</li>
+            <li><strong>Cookies:</strong> Pequenos arquivos para melhorar a experiência do usuário</li>
+        </ul>
+
+        <h2>3. Como Usamos Seus Dados</h2>
+        <p>Utilizamos seus dados pessoais para:</p>
+        <ul>
+            <li>✅ Criar e gerenciar sua conta</li>
+            <li>✅ Conectar motoristas/transportadoras com chapas</li>
+            <li>✅ Processar e gerenciar solicitações de serviço</li>
+            <li>✅ Enviar notificações importantes sobre o serviço</li>
+            <li>✅ Melhorar nossos serviços e funcionalidades</li>
+            <li>✅ Prevenir fraudes e garantir segurança</li>
+            <li>✅ Cumprir obrigações legais</li>
+            <li>✅ Gerenciar o sistema de reputação e avaliações</li>
+        </ul>
+
+        <h2>4. Compartilhamento de Dados</h2>
+        <p>O Loomper <span class="highlight">NÃO vende seus dados pessoais</span>. Compartilhamos dados apenas nas seguintes situações:</p>
+
+        <h3>4.1 Com Outros Usuários</h3>
+        <p>Compartilhamos informações necessárias para a prestação do serviço:</p>
+        <ul>
+            <li>Motoristas/transportadoras veem: Nome, avaliações, experiência dos chapas</li>
+            <li>Chapas veem: Nome, localização aproximada, tipo de veículo</li>
+        </ul>
+
+        <h3>4.2 Com Prestadores de Serviços</h3>
+        <ul>
+            <li>Provedores de hospedagem e infraestrutura (Firebase/Google Cloud)</li>
+            <li>Serviços de pagamento (quando aplicável)</li>
+            <li>Ferramentas de análise e monitoramento</li>
+        </ul>
+
+        <h3>4.3 Por Obrigação Legal</h3>
+        <p>Podemos divulgar dados quando exigido por lei ou para:</p>
+        <ul>
+            <li>Cumprir ordem judicial ou processo legal</li>
+            <li>Proteger direitos, propriedade ou segurança</li>
+            <li>Investigar possível fraude</li>
+        </ul>
+
+        <h2>5. Armazenamento e Segurança</h2>
+        <h3>5.1 Onde Armazenamos</h3>
+        <p>Seus dados são armazenados em servidores seguros do Firebase/Google Cloud Platform, com infraestrutura localizada no Brasil e/ou Estados Unidos.</p>
+
+        <h3>5.2 Medidas de Segurança</h3>
+        <ul>
+            <li>🔒 Criptografia de dados em trânsito e em repouso</li>
+            <li>🔒 Controle de acesso restrito</li>
+            <li>🔒 Monitoramento contínuo de segurança</li>
+            <li>🔒 Backups regulares</li>
+            <li>🔒 Firewall e proteção contra ataques</li>
+        </ul>
+
+        <h3>5.3 Retenção de Dados</h3>
+        <p>Mantemos seus dados pelo tempo necessário para:</p>
+        <ul>
+            <li>Prestar os serviços contratados</li>
+            <li>Cumprir obrigações legais</li>
+            <li>Resolver disputas</li>
+        </ul>
+        <p>Após esse período, os dados são anonimizados ou excluídos.</p>
+
+        <h2>6. Seus Direitos (LGPD)</h2>
+        <p>De acordo com a LGPD, você tem direito a:</p>
+
+        <table>
+            <tr>
+                <th>Direito</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>📋 Confirmação</td>
+                <td>Saber se tratamos seus dados</td>
+            </tr>
+            <tr>
+                <td>👁️ Acesso</td>
+                <td>Obter cópia dos seus dados</td>
+            </tr>
+            <tr>
+                <td>✏️ Correção</td>
+                <td>Corrigir dados incompletos ou desatualizados</td>
+            </tr>
+            <tr>
+                <td>🗑️ Exclusão</td>
+                <td>Solicitar exclusão de dados desnecessários</td>
+            </tr>
+            <tr>
+                <td>📤 Portabilidade</td>
+                <td>Receber seus dados em formato estruturado</td>
+            </tr>
+            <tr>
+                <td>🚫 Oposição</td>
+                <td>Opor-se ao tratamento de dados</td>
+            </tr>
+            <tr>
+                <td>❌ Revogação</td>
+                <td>Revogar consentimento a qualquer momento</td>
+            </tr>
+        </table>
+
+        <p><strong>Como exercer seus direitos:</strong> Entre em contato através de contato@loomper.com.br ou WhatsApp (11) 96585-8142.</p>
+
+        <h2>7. Cookies e Tecnologias Similares</h2>
+        <p>Utilizamos cookies para:</p>
+        <ul>
+            <li>Manter você conectado</li>
+            <li>Lembrar suas preferências</li>
+            <li>Analisar como você usa o serviço</li>
+            <li>Melhorar a experiência do usuário</li>
+        </ul>
+        <p>Você pode gerenciar cookies nas configurações do seu navegador.</p>
+
+        <h2>8. Menores de Idade</h2>
+        <p>O Loomper Connect é destinado a usuários com <strong>18 anos ou mais</strong>. Não coletamos intencionalmente dados de menores de idade.</p>
+
+        <h2>9. Mudanças nesta Política</h2>
+        <p>Podemos atualizar esta Política periodicamente. Mudanças significativas serão notificadas por e-mail ou através do aplicativo.</p>
+
+        <h2>10. Encarregado de Dados (DPO)</h2>
+        <p>Para questões sobre proteção de dados, entre em contato com nosso Encarregado de Dados:</p>
+        <ul>
+            <li><strong>E-mail:</strong> dpo@loomper.com.br</li>
+            <li><strong>E-mail alternativo:</strong> contato@loomper.com.br</li>
+            <li><strong>WhatsApp:</strong> (11) 96585-8142</li>
+        </ul>
+
+        <h2>11. Informações da Empresa</h2>
+        <div class="info-box">
+            <p><strong>Razão Social:</strong> Grupo Ajud.ai Brasil Inova Simples (I.S.)</p>
+            <p><strong>Nome Fantasia:</strong> Loomper Connect</p>
+            <p><strong>CNPJ:</strong> 59.150.688/0001-39</p>
+            <p><strong>Endereço:</strong> São Bernardo do Campo, SP, BRASIL</p>
+            <p><strong>E-mail:</strong> contato@loomper.com.br</p>
+            <p><strong>WhatsApp:</strong> (11) 96585-8142</p>
+        </div>
+
+        <h2>12. Legislação Aplicável</h2>
+        <p>Esta Política é regida pela legislação brasileira, especialmente:</p>
+        <ul>
+            <li>LGPD (Lei nº 13.709/2018)</li>
+            <li>Marco Civil da Internet (Lei nº 12.965/2014)</li>
+            <li>Código de Defesa do Consumidor (Lei nº 8.078/1990)</li>
+        </ul>
     </div>
 
+    <footer>
+        <p><strong>LOOMPER® 2026</strong> | Grupo Ajud.ai Brasil I.S.</p>
+        <p>CNPJ: 59.150.688/0001-39</p>
+        <p style="margin-top:15px; font-size:0.9rem;">
+            <a href="termos.html" style="color:#F8F8FF; text-decoration:underline;">Termos de Uso</a> | 
+            <a href="privacidade.html" style="color:#F8F8FF; text-decoration:underline;">Política de Privacidade</a>
+        </p>
+    </footer>
 </body>
 </html>
