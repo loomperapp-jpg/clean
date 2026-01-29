@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>LOOMPER | Conexão. Segurança. Dignidade.</title>
+    <meta name="description" content="O Primeiro Ecossistema de Logística Automotiva.">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="assets/images/FAVICON_Loomper.png">
+
+    <!-- Fonts & Icons (Inter - Branding Oficial) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- CSS OFICIAL -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================================
+         1️⃣ HERO SECTION (GRADIENTE OFICIAL)
+         ======================================== -->
+    <section id="hero" class="hero-section">
+        <!-- LOGO -->
+        <div class="brand-logo">
+            <img src="assets/images/logo.png" alt="Loomper Logo">
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    LOOMPER
+                    <span class="hero-subtitle-main">Conectamos motoristas cegonheiros com chapas experientes.</span>
+                </h1>
+                
+                <p class="hero-desc">
+                    Sem Improviso. Sem surpresa. Com agilidade e respeito.<br>
+                    <span class="highlight-text">Motoristas CEGONHEIROS, ajudantes e transportadoras operando com mais segurança, organização e dignidade.</span>
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="cta-button cta-primary" onclick="scrollToSection('perfis')">
+                        Começar agora
+                    </button>
+                    <button class="cta-button cta-secondary" onclick="window.location.href='https://app.loomper.com.br'">
+                        <i class="fas fa-desktop"></i> Testar versão Web
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         2️⃣ PERFIS (CARDS COM BACKGROUNDS OFICIAIS)
+         ======================================== -->
+    <section id="perfis" class="profiles-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Onde você se encaixa?</h2>
+                <p>Escolha seu perfil e seja um pioneiro</p>
+            </div>
+
+            <div class="profiles-grid">
+
+                <!-- Card Motorista -->
+                <div class="profile-card motorista" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Sou Motorista Cegonheiro</h3>
+                    <p>
+                        Menos improviso na descarga.  
+                        Mais segurança, apoio e previsibilidade.
+                    </p>
+                    <div class="card-cta">
+                        Sou Motorista <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card Ajudante / Chapa -->
+                <div class="profile-card chapa" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Sou Ajudante / Chapa</h3>
+                    <p>
+                        Mais oportunidades.  
+                        Mais respeito pelo seu trabalho.  
+                        Chega de depender da sorte.
+                    </p>
+                    <div class="card-cta">
+                        Sou Ajudante <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card Transportadora -->
+                <div class="profile-card transportadora" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Sou Transportadora</h3>
+                    <p>
+                        Menos atraso, menos risco.  
+                        Mais controle e organização na operação urbana.
+                    </p>
+                    <div class="card-cta">
+                        Sou Transportadora <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Card Auxiliar (Construção) -->
+            <div class="card-auxiliary" onclick="openTimelineModal()">
+                <div class="aux-content">
+                    <h4>
+                        <i class="fas fa-hard-hat"></i>
+                        Projeto em Construção
+                    </h4>
+                    <p>Clique para ver a Linha do Tempo (2025 – 2026)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+        
+    <!-- ========================================
+         3️⃣ REALIDADE
+         ======================================== -->
+    <section class="reality-section">
+        <div class="container">
+            <div class="reality-box">
+                <div class="reality-text">
+                    <h2>O Loomper está sendo construído agora.</h2>
+                    <p>O grupo inicial é limitado para garantir qualidade.</p>
+                    <ul class="pioneer-list">
+                        <li><i class="fas fa-check"></i> Voz ativa na construção</li>
+                        <li><i class="fas fa-check"></i> Prioridade no lançamento</li>
+                        <li><i class="fas fa-check"></i> Benefícios de pioneiro</li>
+                    </ul>
+                </div>
+                <div class="reality-img-container">
+                    <img src="assets/images/driver.jpeg" alt="Motorista Cegonheiro" class="responsive-img-wide">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         4️⃣ RODAPÉ OFICIAL
+         ======================================== -->
+    <footer class="footer-menu-style">
+        <div class="container">
+            
+            <!-- MENU PRINCIPAL -->
+            <div class="footer-nav">
+                <div class="footer-nav-item" onclick="openFooterModal('sobre')">Sobre o Loomper</div>
+                <div class="footer-nav-item" onclick="openFooterModal('praque')">Para que Serve</div>
+                <div class="footer-nav-item" onclick="openFooterModal('duvidas')">Dúvidas</div>
+                <div class="footer-nav-item" onclick="openFooterModal('legal')">Legal</div>
+                <div class="footer-nav-item" onclick="openFooterModal('stakeholders')">Stakeholders</div>
+                <div class="footer-nav-item" onclick="openFooterModal('fale')">Fale Conosco</div>
+                <div class="footer-nav-item highlight-apoie" onclick="openFooterModal('apoie')">
+                    <i class="fas fa-heart"></i> APOIE
+                </div>
+            </div>
+
+            <!-- DADOS INSTITUCIONAIS -->
+            <div class="footer-bottom-info">
+                <p class="brand-name">LOOMPER®</p>
+                <p class="brand-slogan">TECNOLOGIA • GESTÃO • PESSOAS • ESG</p>
+                
+                <!-- REDES SOCIAIS (45px OFICIAL) -->
+                <div class="social-links">
+                    <a href="https://facebook.com/loomper" target="_blank" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/loomper" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/loomper" target="_blank" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@loomper" target="_blank" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                
+                <p class="company-details">
+                    Uma empresa do Grupo Ajud.ai Brasil I.S.<br>
+                    CNPJ 59.150.688/0001-39<br>
+                    São Bernardo do Campo | SP | BRASIL
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         5️⃣ BOTÕES FLUTUANTES
+         ======================================== -->
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/5511965858142?text=Olá!%20Quero%20ser%20pioneiro%20no%20Loomper" 
+       class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- TESTAR VERSÃO WEB (substituindo APK) -->
+    <a href="https://app.loomper.com.br" 
+       class="download-apk-float" target="_blank" aria-label="Testar Versão Web">
+        <i class="fas fa-desktop"></i>
+        <span>Testar Web</span>
+    </a>
+
+    <!-- ========================================
+         6️⃣ MODAIS
+         ======================================== -->
+
+    <!-- MODAL CADASTRO (FLUXO) -->
+
+    <!-- MODAL TIMELINE -->
+    <div id="modal-timeline" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-timeline')">&times;</span>
+            <div class="timeline-header">
+                <h3><i class="fas fa-road"></i> Nossa Jornada</h3>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item done">
+                    <div class="tl-icon"><i class="fas fa-check"></i></div>
+                    <div class="tl-content"><h4>Início 2025</h4><p>Pesquisa e concepção.</p></div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="tl-icon"><i class="fas fa-sync fa-spin"></i></div>
+                    <div class="tl-content"><h4>Agora</h4><p>Beta Fechado (Pioneiros).</p></div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="tl-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="tl-content"><h4>Março / 2026</h4><p>Entrega do MVP (App).</p></div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="tl-icon"><i class="fas fa-store"></i></div>
+                    <div class="tl-content"><h4>Junho / 2026</h4><p>Lançamento nas Lojas.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAIS DO RODAPÉ -->
+    <div id="modal-footer" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-footer')">&times;</span>
+            <div id="footer-modal-content">
+                <!-- Conteúdo injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         7️⃣ SCRIPTS
+         ======================================== -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

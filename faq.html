@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Perguntas Frequentes - Loomper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: #1a1a2e;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #001f54 0%, #003d82 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .faq-category {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #001f54 0%, #003d82 100%);
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, #003d82 0%, #001f54 100%);
+        }
+
+        .category-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .category-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .category-header.active .category-icon {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            display: none;
+            padding: 30px 25px;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #001f54;
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .faq-question i {
+            color: #dc143c;
+            margin-right: 10px;
+            min-width: 20px;
+        }
+
+        .faq-answer {
+            color: #4a5568;
+            margin-left: 30px;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul, .faq-answer ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #001f54 0%, #003d82 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-box a {
+            color: #dc143c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #dc143c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #b8112e;
+            transform: translateY(-2px);
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #001f54;
+            box-shadow: 0 0 10px rgba(0, 31, 84, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .category-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .faq-question {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Perguntas Frequentes</h1>
+            <p class="subtitle">Tire suas dúvidas sobre o Loomper</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" class="search-input" id="faq-search" placeholder="🔍 Buscar pergunta...">
+        </div>
+
+        <!-- CATEGORIA 1: GERAL -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>📌 Perguntas Gerais</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>O que é o Loomper?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O Loomper é uma plataforma digital que conecta profissionais autônomos qualificados (chapas/ajudantes) com motoristas cegonheiros e empresas transportadoras que necessitam de serviços especializados para descarga de veículos.</p>
+                        <div class="highlight-box">
+                            <strong>Missão:</strong> Trazer dignidade, segurança e previsibilidade para o setor de cegonhas, eliminando o improviso e criando um ecossistema profissional e organizado.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como funciona a plataforma?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A plataforma funciona em 3 etapas simples:</p>
+                        <ol>
+                            <li><strong>Cadastro:</strong> Profissionais qualificados se cadastram e são aprovados após validação</li>
+                            <li><strong>Matchmaking:</strong> Motoristas buscam chapas qualificados por localização e disponibilidade</li>
+                            <li><strong>Conexão:</strong> Sistema conecta motorista e chapa de forma rápida e segura</li>
+                        </ol>
+                        <div class="info-box">
+                            <strong>Nota:</strong> A plataforma atua apenas como intermediadora tecnológica, não estabelecendo vínculos empregatícios.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>O Loomper já está funcionando?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O Loomper está em fase de <strong>BETA FECHADO</strong> com a Campanha Pioneiros.</p>
+                        <div class="warning-box">
+                            <strong>Status Atual:</strong> Estamos construindo a plataforma junto com os primeiros 7.000 usuários (Founders, Pioneers e Early Adopters) para garantir que o produto atenda perfeitamente às necessidades reais do mercado.
+                        </div>
+                        <p>Lançamento oficial previsto para: <strong>2025</strong></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quanto custa usar o Loomper?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O Loomper funciona com um sistema de <strong>créditos</strong>:</p>
+                        <ul>
+                            <li><strong>Para Motoristas:</strong> Pagam créditos para acessar chapas qualificados</li>
+                            <li><strong>Para Chapas:</strong> Recebem oportunidades sem custo (a plataforma cobra do motorista)</li>
+                            <li><strong>Para Transportadoras:</strong> Planos corporativos com valores especiais</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Pioneiros:</strong> Os primeiros usuários terão descontos vitalícios de até 25% em todas as compras de créditos!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 2: CAMPANHA PIONEIROS -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>🚀 Campanha Pioneiros</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>O que é a Campanha Pioneiros?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>É um programa exclusivo para os <strong>primeiros 7.000 usuários</strong> que se cadastrarem na plataforma Loomper antes do lançamento oficial.</p>
+                        <div class="highlight-box">
+                            <strong>Vagas Limitadas:</strong><br>
+                            🥇 Founders: 500 vagas<br>
+                            🥈 Pioneers: 1.500 vagas<br>
+                            🥉 Early Adopters: 5.000 vagas
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quais os benefícios de ser Pioneiro?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Benefícios exclusivos por categoria:</p>
+                        
+                        <strong>🥇 FOUNDERS (500 primeiros):</strong>
+                        <ul>
+                            <li>25% de desconto VITALÍCIO em todas as compras</li>
+                            <li>Ganhos MLM ilimitados (sem teto mensal)</li>
+                            <li>Badge exclusivo "Founder"</li>
+                            <li>Acesso prioritário a novos recursos</li>
+                            <li>Voz ativa no desenvolvimento</li>
+                        </ul>
+                        
+                        <strong>🥈 PIONEERS (1.500 seguintes):</strong>
+                        <ul>
+                            <li>15% de desconto VITALÍCIO</li>
+                            <li>Ganhos MLM até 50.000 créditos/mês (~R$ 5.000)</li>
+                            <li>Badge "Pioneer"</li>
+                            <li>Acesso antecipado a recursos</li>
+                        </ul>
+                        
+                        <strong>🥉 EARLY ADOPTERS (5.000 seguintes):</strong>
+                        <ul>
+                            <li>10% de desconto VITALÍCIO</li>
+                            <li>Ganhos MLM até 20.000 créditos/mês (~R$ 2.000)</li>
+                            <li>Badge "Early Adopter"</li>
+                            <li>Participação em beta tests</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como me cadastrar na Campanha Pioneiros?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Siga estes passos:</p>
+                        <ol>
+                            <li>Preencha o formulário de cadastro na landing page</li>
+                            <li>Aguarde aprovação (análise de 1-3 dias úteis)</li>
+                            <li>Complete o cadastro completo (documentos + verificações)</li>
+                            <li>Receba seu código exclusivo de indicação (LMP-XXXXXX)</li>
+                            <li>Aguarde o lançamento oficial para começar a usar!</li>
+                        </ol>
+                        <div class="warning-box">
+                            <strong>Importante:</strong> As vagas são preenchidas por ordem de cadastro aprovado. Garanta a sua o quanto antes!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 3: SISTEMA DE CRÉDITOS -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>💳 Sistema de Créditos</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como funcionam os créditos?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os créditos são a moeda virtual da plataforma Loomper. Existem 3 tipos:</p>
+                        
+                        <strong>1. CRÉDITOS PAGOS</strong>
+                        <ul>
+                            <li>Comprados em pacotes (Starter, Professional, Corporate)</li>
+                            <li>Nunca expiram</li>
+                            <li>Usados por último (após promocionais e campanha)</li>
+                        </ul>
+                        
+                        <strong>2. CRÉDITOS PROMOCIONAIS</strong>
+                        <ul>
+                            <li>Recebidos em promoções e bônus imediato MLM</li>
+                            <li>Expiram em 30 dias</li>
+                            <li>Usados primeiro (para não perder)</li>
+                        </ul>
+                        
+                        <strong>3. CRÉDITOS DE CAMPANHA</strong>
+                        <ul>
+                            <li>Recebidos em campanhas especiais (Pioneiros, etc)</li>
+                            <li>Expiram no fim do mês</li>
+                            <li>Usados depois dos promocionais</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quais são os pacotes de créditos disponíveis?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="info-box">
+                            <strong>PACOTE STARTER</strong><br>
+                            250 créditos por R$ 49,90<br>
+                            Ideal para: Testes iniciais
+                        </div>
+                        
+                        <div class="info-box">
+                            <strong>PACOTE PROFESSIONAL (10% OFF)</strong><br>
+                            1.050 créditos por R$ 179,90 (era R$ 199,89)<br>
+                            Ideal para: Uso regular<br>
+                            <strong>MAIS POPULAR!</strong>
+                        </div>
+                        
+                        <div class="info-box">
+                            <strong>PACOTE CORPORATE (20% OFF)</strong><br>
+                            3.300 créditos por R$ 479,90 (era R$ 599,88)<br>
+                            Ideal para: Uso intensivo<br>
+                            <strong>MELHOR CUSTO-BENEFÍCIO!</strong>
+                        </div>
+                        
+                        <p><strong>+ Desconto Pioneer:</strong> Founders 25%, Pioneers 15%, Early Adopters 10%</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Posso transferir ou vender meus créditos?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="warning-box">
+                            <strong>NÃO!</strong> Os créditos são de uso pessoal e intransferível. Qualquer tentativa de venda, troca ou transferência resultará no banimento da plataforma sem reembolso.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 4: PROGRAMA MLM -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>🎁 Programa de Indicações (MLM)</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como funciona o Programa MLM?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O Programa de Indicações permite que você ganhe bônus em créditos ao indicar novos usuários qualificados para a plataforma, em até <strong>3 níveis de profundidade</strong>.</p>
+                        
+                        <strong>Bônus Imediato:</strong>
+                        <ul>
+                            <li>+100 créditos promocionais quando seu indicado DIRETO faz a primeira compra</li>
+                            <li>Válido por 30 dias</li>
+                            <li>Apenas uma vez por indicado</li>
+                        </ul>
+                        
+                        <strong>Bônus Recorrente:</strong>
+                        <ul>
+                            <li>Nível 1 (direto): 5% em créditos pagos</li>
+                            <li>Nível 2 (indireto): 3% em créditos pagos</li>
+                            <li>Nível 3 (3º nível): 2% em créditos pagos</li>
+                            <li>Nunca expiram</li>
+                            <li>Todas as compras futuras geram bônus!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quanto posso ganhar com o MLM?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depende do seu tier e da atividade da sua rede:</p>
+                        
+                        <strong>Teto Mensal por Tier:</strong>
+                        <ul>
+                            <li>🥇 Founder: <strong>ILIMITADO</strong></li>
+                            <li>🥈 Pioneer: 50.000 créditos/mês (~R$ 5.000)</li>
+                            <li>🥉 Early Adopter: 20.000 créditos/mês (~R$ 2.000)</li>
+                            <li>👤 Regular: 10.000 créditos/mês (~R$ 1.000)</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <strong>Exemplo Real:</strong><br>
+                            Se você indica 10 pessoas que compram o pacote Professional (R$ 179,90) por mês:<br>
+                            10 × R$ 179,90 × 5% = R$ 89,95 ≈ 899 créditos/mês<br>
+                            <br>
+                            <strong>Isso é recorrente! Ganha todo mês que eles comprarem!</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>O Loomper é esquema de pirâmide?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="highlight-box">
+                            <strong>NÃO!</strong> O Programa MLM Loomper NÃO é um esquema pirâmide porque:
+                            <ul>
+                                <li>Há um produto/serviço real (créditos para acesso a oportunidades)</li>
+                                <li>Não há obrigatoriedade de recrutar pessoas</li>
+                                <li>Não há taxas de adesão obrigatórias</li>
+                                <li>Os ganhos vêm de consumo real (compras de créditos)</li>
+                                <li>É transparente e está em conformidade com a legislação brasileira</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 5: CADASTRO E APROVAÇÃO -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>📝 Cadastro e Aprovação</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quem pode se cadastrar?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Podem se cadastrar:</p>
+                        <ul>
+                            <li>Maiores de 18 anos</li>
+                            <li>CPF válido e regularizado</li>
+                            <li>Experiência comprovável como chapa/ajudante</li>
+                            <li>Documentos válidos (RG, selfie)</li>
+                            <li>2 referências comerciais OU código de indicação válido</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Quanto tempo leva a aprovação?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O processo de aprovação passa por várias etapas:</p>
+                        <ol>
+                            <li><strong>Análise inicial:</strong> 1-3 dias úteis</li>
+                            <li><strong>Validação de documentos:</strong> 1-2 dias úteis</li>
+                            <li><strong>Verificação de referências:</strong> 2-5 dias úteis (se aplicável)</li>
+                        </ol>
+                        <div class="info-box">
+                            <strong>Total estimado:</strong> 3-10 dias úteis dependendo da complexidade da validação
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Preciso informar referências comerciais?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depende:</p>
+                        
+                        <strong>COM código de indicação válido:</strong>
+                        <ul>
+                            <li>Referências NÃO são obrigatórias</li>
+                            <li>Responsabilidade compartilhada com seu indicador</li>
+                        </ul>
+                        
+                        <strong>SEM código de indicação:</strong>
+                        <ul>
+                            <li>2 referências comerciais OBRIGATÓRIAS</li>
+                            <li>Necessário para validar experiência e qualificação</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 6: SEGURANÇA E PRIVACIDADE -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>🔐 Segurança e Privacidade</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Meus dados estão seguros?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="highlight-box">
+                            <strong>SIM!</strong> A segurança dos seus dados é nossa prioridade máxima.
+                        </div>
+                        <p>Medidas de segurança implementadas:</p>
+                        <ul>
+                            <li>Criptografia em trânsito (HTTPS/TLS) e em repouso</li>
+                            <li>Controle de acesso restrito</li>
+                            <li>Autenticação segura via Firebase</li>
+                            <li>Firewall e monitoramento 24/7</li>
+                            <li>Backups regulares</li>
+                            <li>Logs de auditoria</li>
+                            <li>Conformidade total com a LGPD</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Vocês vendem meus dados?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="warning-box">
+                            <strong>NUNCA!</strong> A Loomper NÃO vende, aluga ou comercializa seus dados pessoais para terceiros com fins de marketing ou publicidade.
+                        </div>
+                        <p>Compartilhamos dados apenas:</p>
+                        <ul>
+                            <li>Com empresas contratantes (dados profissionais necessários)</li>
+                            <li>Com processadores de pagamento (Mercado Pago)</li>
+                            <li>Com autoridades (quando exigido por lei)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como excluir minha conta?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para excluir sua conta:</p>
+                        <ol>
+                            <li>Envie e-mail para: <strong>privacidade@loomper.com.br</strong></li>
+                            <li>Informe seu CPF e motivo da exclusão</li>
+                            <li>Aguarde confirmação (até 15 dias úteis)</li>
+                        </ol>
+                        <div class="warning-box">
+                            <strong>Atenção:</strong> Créditos remanescentes serão perdidos sem direito a reembolso. Bônus MLM acumulados também serão perdidos.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATEGORIA 7: SUPORTE -->
+        <div class="faq-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h2>💬 Suporte e Contato</h2>
+                <span class="category-icon">▼</span>
+            </div>
+            <div class="category-content">
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Como entrar em contato com o suporte?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Temos vários canais de atendimento:</p>
+                        <ul>
+                            <li><strong>E-mail Geral:</strong> contato@loomper.com.br</li>
+                            <li><strong>Suporte Técnico:</strong> suporte@loomper.com.br</li>
+                            <li><strong>Privacidade/LGPD:</strong> privacidade@loomper.com.br</li>
+                            <li><strong>MLM:</strong> mlm@loomper.com.br</li>
+                            <li><strong>WhatsApp:</strong> (11) 96585-8142</li>
+                        </ul>
+                        <p><strong>Prazo de resposta:</strong> Até 3 dias úteis</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Não encontrei minha dúvida aqui. E agora?</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Entre em contato conosco! Teremos prazer em ajudar:</p>
+                        <ul>
+                            <li>📧 <strong>E-mail:</strong> contato@loomper.com.br</li>
+                            <li>💬 <strong>WhatsApp:</strong> (11) 96585-8142</li>
+                            <li>🌐 <strong>Site:</strong> www.loomper.com.br</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h3>Ainda tem dúvidas?</h3>
+            <p>Estamos aqui para ajudar!</p>
+            <p>
+                <strong>E-mail:</strong> <a href="mailto:contato@loomper.com.br">contato@loomper.com.br</a><br>
+                <strong>WhatsApp:</strong> <a href="https://wa.me/5511965858142">(11) 96585-8142</a>
+            </p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Voltar para página inicial</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCategory(element) {
+            const content = element.nextElementSibling;
+            const allContents = document.querySelectorAll('.category-content');
+            const allHeaders = document.querySelectorAll('.category-header');
+            
+            // Fecha todos os outros
+            allContents.forEach(c => {
+                if (c !== content) c.classList.remove('active');
+            });
+            allHeaders.forEach(h => {
+                if (h !== element) h.classList.remove('active');
+            });
+            
+            // Toggle atual
+            content.classList.toggle('active');
+            element.classList.toggle('active');
+        }
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            
+            // Fecha todos os outros
+            allAnswers.forEach(a => {
+                if (a !== answer) a.classList.remove('active');
+            });
+            
+            // Toggle atual
+            answer.classList.toggle('active');
+        }
+
+        // Busca no FAQ
+        document.getElementById('faq-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Se está buscando, abre todas as categorias
+            if (searchTerm.length > 0) {
+                document.querySelectorAll('.category-content').forEach(c => c.classList.add('active'));
+                document.querySelectorAll('.category-header').forEach(h => h.classList.add('active'));
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+rules_version = '2';
+
+/**
+ * 🔥 LOOMPER - FIRESTORE SECURITY RULES
+ * ======================================
+ * 
+ * Regras de segurança otimizadas para o Loomper
+ * 
+ * COLEÇÕES:
+ * - campaigns: Leitura pública, escrita apenas admin
+ * - leads: Criação pública (landing), leitura/atualização apenas admin
+ * - users: Leitura/escrita do próprio usuário, admin pode tudo
+ * - referrals: Criação/leitura do próprio usuário
+ * - admins: Apenas admin pode ler/escrever
+ * 
+ * AUTOR: Loomper Team
+ * DATA: 29/01/2026
+ * VERSÃO: 1.0
+ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // FUNÇÕES AUXILIARES
+    // ============================================
+    
+    /**
+     * Verifica se o usuário está autenticado
+     */
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    /**
+     * Verifica se o usuário é admin
+     */
+    function isAdmin() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'ADMIN';
+    }
+    
+    /**
+     * Verifica se o usuário é master
+     */
+    function isMaster() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'MASTER';
+    }
+    
+    /**
+     * Verifica se o usuário é owner do documento
+     */
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // COLEÇÃO: campaigns (Campanhas)
+    // ============================================
+    
+    match /campaigns/{campaignId} {
+      // Todos podem ler (para o contador na landing page)
+      allow read: if true;
+      
+      // Apenas admins podem criar/atualizar/deletar
+      allow create, update, delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: leads (Leads da Landing Page)
+    // ============================================
+    
+    match /leads/{leadId} {
+      // Landing page pública pode criar leads (cadastro)
+      allow create: if true;
+      
+      // Apenas admins podem ler, atualizar ou deletar
+      allow read, update, delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: users (Usuários Aprovados)
+    // ============================================
+    
+    match /users/{userId} {
+      // Usuário pode ler seus próprios dados
+      // Admins podem ler todos
+      allow read: if isOwner(userId) || isAdmin() || isMaster();
+      
+      // Usuário pode criar sua própria conta (após aprovação)
+      allow create: if isAuthenticated();
+      
+      // Usuário pode atualizar seus próprios dados
+      // Admins podem atualizar qualquer um
+      allow update: if isOwner(userId) || isAdmin() || isMaster();
+      
+      // Apenas admins podem deletar
+      allow delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: referrals (Indicações MLM)
+    // ============================================
+    
+    match /referrals/{referralId} {
+      // Usuário pode criar indicações
+      allow create: if isAuthenticated();
+      
+      // Usuário pode ler suas próprias indicações (referrerId ou referredUserId)
+      // Admins podem ler todas
+      allow read: if isAuthenticated() && 
+                     (resource.data.referrerId == request.auth.uid || 
+                      resource.data.referredUserId == request.auth.uid) ||
+                     isAdmin() || isMaster();
+      
+      // Apenas admins podem atualizar (confirmar/rejeitar indicações)
+      allow update: if isAdmin() || isMaster();
+      
+      // Apenas admins podem deletar
+      allow delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: admins (Administradores)
+    // ============================================
+    
+    match /admins/{adminId} {
+      // Apenas masters podem criar admins
+      allow create: if isMaster();
+      
+      // Admins podem ler apenas seu próprio documento
+      // Masters podem ler todos
+      allow read: if isOwner(adminId) || isMaster();
+      
+      // Apenas masters podem atualizar/deletar admins
+      allow update, delete: if isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: transactions (Transações de Créditos)
+    // ============================================
+    
+    match /transactions/{transactionId} {
+      // Usuário pode ler suas próprias transações
+      // Admins podem ler todas
+      allow read: if isAuthenticated() && 
+                     (resource.data.userId == request.auth.uid) ||
+                     isAdmin() || isMaster();
+      
+      // Sistema pode criar transações (via Cloud Functions)
+      // Admins também podem criar manualmente
+      allow create: if isAuthenticated() || isAdmin() || isMaster();
+      
+      // Apenas admins podem atualizar/deletar
+      allow update, delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // COLEÇÃO: services (Serviços/Demandas)
+    // ============================================
+    
+    match /services/{serviceId} {
+      // Usuário pode ler serviços relacionados a ele
+      // Admins podem ler todos
+      allow read: if isAuthenticated() && 
+                     (resource.data.motoristId == request.auth.uid || 
+                      resource.data.chapaId == request.auth.uid) ||
+                     isAdmin() || isMaster();
+      
+      // Usuário autenticado pode criar serviços
+      allow create: if isAuthenticated();
+      
+      // Usuário pode atualizar serviços relacionados a ele
+      // Admins podem atualizar todos
+      allow update: if isAuthenticated() && 
+                       (resource.data.motoristId == request.auth.uid || 
+                        resource.data.chapaId == request.auth.uid) ||
+                       isAdmin() || isMaster();
+      
+      // Apenas admins podem deletar
+      allow delete: if isAdmin() || isMaster();
+    }
+    
+    // ============================================
+    // REGRA PADRÃO: NEGAR TUDO
+    // ============================================
+    
+    // Qualquer coleção não especificada acima é negada por padrão
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
