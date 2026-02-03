@@ -1029,3 +1029,221 @@ body {
 /* ========================================
    ✅ FIM DO CSS OFICIAL
    ======================================== */
+
+/* ===== PAIN POINTS SECTION ===== */
+.pain-points-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--ink-black) 0%, var(--ink-black-light) 100%);
+}
+
+.pain-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.pain-card {
+  background: var(--ink-black-lighter);
+  border: 2px solid var(--primary-red);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red), var(--royal-blue));
+}
+
+.pain-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(217, 4, 22, 0.3);
+  border-color: var(--royal-blue);
+}
+
+.pain-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.pain-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  color: var(--royal-blue);
+}
+
+.pain-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--light);
+  margin-bottom: 24px;
+  min-height: 80px;
+}
+
+.pain-cta {
+  background: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pain-cta:hover {
+  background: var(--royal-blue);
+  transform: scale(1.05);
+}
+
+/* ===== PAIN MODALS ===== */
+.pain-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pain-modal-content {
+  background: var(--ink-black-lighter);
+  border: 2px solid var(--primary-red);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pain-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--light);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pain-modal-close:hover {
+  color: var(--primary-red);
+}
+
+.pain-modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: var(--royal-blue);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pain-solution h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--primary-red);
+}
+
+.pain-problem-list,
+.pain-solution-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.pain-problem-list li,
+.pain-solution-list li {
+  padding: 12px 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--ink-black-light);
+}
+
+.pain-problem-list li {
+  color: #ff6b6b;
+}
+
+.pain-solution-list li {
+  color: #51cf66;
+}
+
+.pain-modal-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-red);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.pain-modal-cta:hover {
+  background: var(--royal-blue);
+  transform: scale(1.05);
+}
+
+/* Mobile Responsivo */
+@media (max-width: 768px) {
+  .pain-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pain-modal-content {
+    padding: 24px;
+    margin: 20px;
+  }
+
+  .pain-modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .pain-text {
+    min-height: auto;
+  }
+}

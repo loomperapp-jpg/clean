@@ -231,6 +231,156 @@
 <!-- ============================================
      🏆 SEÇÃO FOUNDER 500 V10 (CLEAN & LIGHT)
      ============================================ -->
+<!-- SEÇÃO: POR QUE O LOOMPER EXISTE? -->
+<section id="pain-points" class="pain-points-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Por que o Loomper existe?</h2>
+            <p>Resolvendo os maiores problemas do setor de cegonhas</p>
+        </div>
+
+        <div class="pain-cards-grid">
+            
+            <!-- CARD 1: Motorista -->
+            <div class="pain-card" data-actor="motorista">
+                <div class="pain-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Motorista</h3>
+                <p class="pain-text">Cansado de ficar esperando chapa? Perder tempo procurando ajudante qualificado?</p>
+                <button class="pain-cta" onclick="openPainModal('motorista')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- CARD 2: Chapa -->
+            <div class="pain-card" data-actor="chapa">
+                <div class="pain-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>Chapa/Ajudante</h3>
+                <p class="pain-text">Chega de ficar na rua esperando serviço! Dignidade e previsibilidade para você.</p>
+                <button class="pain-cta" onclick="openPainModal('chapa')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- CARD 3: Transportadora -->
+            <div class="pain-card" data-actor="transportadora">
+                <div class="pain-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Transportadora</h3>
+                <p class="pain-text">Reduzir custos operacionais e garantir mão de obra qualificada? Temos a solução!</p>
+                <button class="pain-cta" onclick="openPainModal('transportadora')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MODAL: Soluções Loomper -->
+<div id="pain-modal-motorista" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('motorista')">&times;</span>
+        <h2><i class="fas fa-user-tie"></i> Motorista</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Perder tempo procurando chapa</li>
+                <li>❌ Não saber se o ajudante é qualificado</li>
+                <li>❌ Riscos de danos aos veículos</li>
+                <li>❌ Preços abusivos de última hora</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Encontre chapas verificados em segundos</li>
+                <li>✅ Avaliações e histórico completo</li>
+                <li>✅ Preços transparentes e justos</li>
+                <li>✅ Pagamento digital seguro</li>
+            </ul>
+            <a href="https://app.loomper.com.br" class="pain-modal-cta">
+                Cadastre-se agora <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="pain-modal-chapa" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('chapa')">&times;</span>
+        <h2><i class="fas fa-hard-hat"></i> Chapa/Ajudante</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Ficar na rua esperando serviço</li>
+                <li>❌ Renda imprevisível</li>
+                <li>❌ Sem benefícios ou garantias</li>
+                <li>❌ Falta de reconhecimento profissional</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Receba oportunidades no celular</li>
+                <li>✅ Construa seu histórico profissional</li>
+                <li>✅ Escolha seus horários e regiões</li>
+                <li>✅ Ganhe avaliações e destaque</li>
+            </ul>
+            <a href="https://app.loomper.com.br" class="pain-modal-cta">
+                Cadastre-se agora <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="pain-modal-transportadora" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('transportadora')">&times;</span>
+        <h2><i class="fas fa-building"></i> Transportadora</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Custos operacionais altos</li>
+                <li>❌ Falta de mão de obra qualificada</li>
+                <li>❌ Atrasos e prejuízos</li>
+                <li>❌ Gestão manual e ineficiente</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Rede de chapas verificados</li>
+                <li>✅ Dashboard de gestão completo</li>
+                <li>✅ Redução de até 40% dos custos</li>
+                <li>✅ Planos corporativos personalizados</li>
+            </ul>
+            <a href="mailto:contato@loomper.com.br?subject=Interesse em Plano Corporativo Loomper" class="pain-modal-cta">
+                Solicitar proposta <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT: Pain Modals -->
+<script>
+function openPainModal(actor) {
+    document.getElementById('pain-modal-' + actor).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePainModal(actor) {
+    document.getElementById('pain-modal-' + actor).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Fechar modal ao clicar fora
+window.onclick = function(event) {
+    if (event.target.classList.contains('pain-modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+</script>
+
 <section id="founder-500" class="founder-section-v10">
   <div class="container">
     
@@ -470,7 +620,7 @@
               <td><strong>300</strong></td>
             </tr>
             <tr>
-              <td class="feature">Desconto Vitalício</td>
+              <td class="feature">Desconto Exclusivo</td>
               <td><strong>20%</strong></td>
               <td><strong>15%</strong></td>
               <td><strong>10%</strong></td>
@@ -699,7 +849,8 @@ console.log('🎯 Script de contador Founder 500 v2.0 carregado');
                                 <li><strong>Para Transportadoras:</strong> Planos corporativos com valores especiais</li>
                             </ul>
                             <div class="faq-info">
-                                <strong>Pioneiros:</strong> Os Fundadores recebem <strong>1.500 créditos/mês VITALÍCIOS</strong> + 20% de desconto perpétuo!
+                                <strong>Pioneiros:</strong> Os Fundadores recebem <strong>1.500 créditos/mês</strong>* + 20% de desconto!<br>
+                                <small>*Créditos mensais enquanto ativo na plataforma (uso no mês anterior)</small>
                             </div>
                         </div>
                     </div>
@@ -725,7 +876,9 @@ console.log('🎯 Script de contador Founder 500 v2.0 carregado');
                         <div class="faq-answer">
                             <p><strong>🥇 FOUNDERS (500 primeiros):</strong></p>
                             <ul>
-                                <li>✅ 1.500 créditos/mês VITALÍCIOS (R$ 180/mês de graça)</li>
+                                <li>✅ 1.500 créditos/mês* (R$ 180/mês)</li>
+                                <li>✅ Badge Fundador exclusivo (permanente)</li>
+                                <li><small>*Renova todo mês enquanto usar a plataforma</small></li>
                                 <li>✅ 20% de desconto VITALÍCIO em todas as compras</li>
                                 <li>✅ Ganhos MLM ilimitados (sem teto mensal)</li>
                                 <li>✅ Badge exclusivo "Founder"</li>
@@ -733,7 +886,7 @@ console.log('🎯 Script de contador Founder 500 v2.0 carregado');
                                 <li>✅ Voz ativa no desenvolvimento (grupo VIP)</li>
                             </ul>
                             <div class="faq-highlight">
-                                <strong>Valor Vitalício:</strong> Se você usar a plataforma por 5 anos, receberá <strong>R$ 10.800 em créditos gratuitos</strong> (R$ 180/mês × 60 meses)!
+                                <strong>Exemplo:</strong> Usando a plataforma por 5 anos, você recebe <strong>R$ 10.800 em créditos</strong> (R$ 180/mês × 60 meses)!
                             </div>
                         </div>
                     </div>
@@ -952,7 +1105,89 @@ console.log('🎯 Script de contador Founder 500 v2.0 carregado');
                 </div>
             </div>
 
-            <!-- CATEGORIA 6: Suporte -->
+            <!-- CATEGORIA 6: Programa de Indicações -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon">🎁</span>
+                    <span class="category-title">Programa de Indicações</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Como funciona o Programa de Indicações?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Indique amigos e ganhe <strong>300 créditos de bônus</strong> para cada indicação qualificada!</p>
+                            <div class="faq-info">
+                                <strong>Regra Simples:</strong> Seus créditos de bônus são liberados APÓS o indicado realizar a primeira compra (mínimo R$ 49,90).
+                            </div>
+                            <p><strong>Passo a passo:</strong></p>
+                            <ol>
+                                <li>Você indica um amigo (compartilha seu código)</li>
+                                <li>Amigo se cadastra usando seu código</li>
+                                <li>Amigo realiza a primeira compra (R$ 49,90+)</li>
+                                <li>Pagamento é confirmado pelo Mercado Pago</li>
+                                <li>Em até 24h: Vocês DOIS ganham 300 créditos cada!</li>
+                            </ol>
+                            <div class="faq-warning">
+                                <strong>Atenção:</strong> Indicações expiram em 30 dias sem compra. Créditos não são liberados para indicações inativas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quanto ganho por indicação?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Você:</strong> 300 créditos<br>
+                            <strong>Seu amigo:</strong> 300 créditos</p>
+                            <div class="faq-highlight">
+                                <strong>Total:</strong> 600 créditos distribuídos por indicação qualificada!
+                            </div>
+                            <p><strong>Exemplo:</strong> Se você indicar 10 amigos e todos comprarem:</p>
+                            <ul>
+                                <li>Você ganha: 10 × 300 = <strong>3.000 créditos</strong> (≈ R$ 360)</li>
+                                <li>Indicações ilimitadas! Sem limite de ganhos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Por que preciso esperar meu amigo comprar?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Para garantir um programa justo e sustentável!</p>
+                            <div class="faq-info">
+                                <strong>Sistema Anti-Fraude v2.0:</strong> Liberamos créditos apenas para indicações reais. Isso evita:
+                                <ul>
+                                    <li>❌ Contas falsas</li>
+                                    <li>❌ Cadastros fantasmas</li>
+                                    <li>❌ Abuso do sistema</li>
+                                </ul>
+                            </div>
+                            <p><strong>Benefícios:</strong></p>
+                            <ul>
+                                <li>✅ Programa sustentável a longo prazo</li>
+                                <li>✅ Créditos com valor real</li>
+                                <li>✅ Recompensa justa para indicadores sérios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 7: Suporte -->
             <div class="faq-category">
                 <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
                     <span class="category-icon">💬</span>
