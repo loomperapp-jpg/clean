@@ -74,9 +74,9 @@ const footerContent = {
     'praque': `
         <h3>Para que Serve</h3>
         <ul style="list-style:none; padding:0;">
-            <li style="margin-bottom:10px;">🚚 <strong>Para o Motorista:</strong> Encontrar apoio local confiável e qualificado.</li>
-            <li style="margin-bottom:10px;">🤝 <strong>Para o Chapa:</strong> Ter serviço constante, previsível e pagamento justo.</li>
-            <li style="margin-bottom:10px;">🏢 <strong>Para a Transportadora:</strong> Reduzir riscos de avaria, custos jurídicos e atrasos.</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-truck" style="color: #D90416;"></i> <strong>Para o Motorista:</strong> Encontrar apoio local confiável e qualificado.</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-handshake" style="color: #D90416;"></i> <strong>Para o Chapa:</strong> Ter serviço constante, previsível e pagamento justo.</li>
+            <li style="margin-bottom:10px;"><i class="fas fa-building" style="color: #D90416;"></i> <strong>Para a Transportadora:</strong> Reduzir riscos de avaria, custos jurídicos e atrasos.</li>
         </ul>
     `,
     
@@ -84,7 +84,7 @@ const footerContent = {
         <h3>Dúvidas Frequentes</h3>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">❓ O que é o Loomper?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-question-circle" style="color: #D90416;"></i> O que é o Loomper?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 O Loomper é o primeiro ecossistema digital que conecta motoristas cegonheiros, chapas (ajudantes) e transportadoras. 
                 Nossa plataforma organiza a "última milha" da logística de veículos, oferecendo segurança, rastreabilidade e dignidade para todos os envolvidos.
@@ -92,7 +92,7 @@ const footerContent = {
         </div>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">💰 Quanto custa para usar?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-dollar-sign" style="color: #10B981;"></i> Quanto custa para usar?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 Durante a fase Beta (até Junho/2026), o uso é <strong>100% GRATUITO</strong> para motoristas e chapas pioneiros. 
                 Transportadoras têm condições especiais. Após o lançamento oficial, manteremos planos acessíveis que cabem no bolso de quem trabalha na estrada.
@@ -100,7 +100,7 @@ const footerContent = {
         </div>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">🛡️ É seguro? Como funciona a validação?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-shield-alt" style="color: #D90416;"></i> É seguro? Como funciona a validação?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 <strong>Sim, 100% seguro!</strong> Todos os cadastros são validados por nossa equipe. 
                 Monitoramos a reputação de cada usuário através de avaliações mútuas após cada operação. 
@@ -109,7 +109,7 @@ const footerContent = {
         </div>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">📅 Quando o App será lançado oficialmente?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-calendar-alt" style="color: #D90416;"></i> Quando o App será lançado oficialmente?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 <strong>Junho/2026</strong> nas lojas Google Play e Apple App Store. 
                 Agora estamos na <strong>fase de Pioneiros</strong>, testando e aperfeiçoando com profissionais reais da estrada. 
@@ -118,7 +118,7 @@ const footerContent = {
         </div>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">🎁 O que os Pioneiros ganham?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-gift" style="color: #D90416;"></i> O que os Pioneiros ganham?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 • Acesso vitalício gratuito às funcionalidades básicas<br>
                 • Selo de "Pioneiro" no perfil (destaque na plataforma)<br>
@@ -129,7 +129,7 @@ const footerContent = {
         </div>
         
         <div style="margin-bottom: 20px;">
-            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;">📱 Já posso usar o App?</p>
+            <p style="font-weight: 700; color: var(--flag-red); margin-bottom: 8px;"><i class="fas fa-mobile-alt" style="color: #D90416;"></i> Já posso usar o App?</p>
             <p style="margin-left: 20px; color: var(--ink-black-light);">
                 Sim! A <strong>versão Web Beta</strong> já está disponível em <a href="https://app.loomper.com.br" target="_blank" style="color: var(--oxford-navy); text-decoration: underline;">app.loomper.com.br</a>. 
                 Clique em "Testar Versão Web" no topo da página para começar agora mesmo!
