@@ -105,45 +105,15 @@ async function registerReferral(leadId, referralCode) {
 
 /**
  * Incrementar contador de cadastros da campanha
+ * ATUALIZADO: Não depende mais de collection 'campaigns'
+ * O contador é calculado dinamicamente a partir de users aprovados
  * @param {string} perfil - Tipo de perfil (motorista, ajudante, transportadora)
  */
 async function incrementCampaignCounter(perfil) {
   try {
-    const campaignRef = db.collection('campaigns').doc('pioneer_launch');
-    
-    // Buscar campanha atual
-    const campaignDoc = await campaignRef.get();
-    if (!campaignDoc.exists) {
-      console.warn('⚠️ Campanha não encontrada');
-      return;
-    }
-    
-    const campaign = campaignDoc.data();
-    const totalSignups = campaign.stats.totalSignups + 1;
-    
-    // Determinar tier
-    let tierToUpdate = null;
-    if (totalSignups <= 500) {
-      tierToUpdate = 'founder';
-    } else if (totalSignups <= 1500) {
-      tierToUpdate = 'pioneer';
-    } else if (totalSignups <= 5000) {
-      tierToUpdate = 'early';
-    }
-    
-    // Atualizar campanha
-    const updates = {
-      'stats.totalSignups': totalSignups,
-      'stats.updatedAt': firebase.firestore.FieldValue.serverTimestamp(),
-    };
-    
-    if (tierToUpdate) {
-      updates[`tiers.${tierToUpdate}.currentSlots`] = firebase.firestore.FieldValue.increment(1);
-    }
-    
-    await campaignRef.update(updates);
-    
-    console.log(`✅ Contador incrementado: ${totalSignups} (tier: ${tierToUpdate || 'none'})`);
+    // Não precisa mais incrementar nada - o contador é calculado em tempo real
+    // a partir do total de usuários aprovados no Firestore
+    console.log(`ℹ️ Contador será atualizado automaticamente (perfil: ${perfil})`);
     
   } catch (error) {
     console.error('❌ Erro ao incrementar contador:', error);
@@ -152,22 +122,64 @@ async function incrementCampaignCounter(perfil) {
 
 /**
  * Buscar dados da campanha (contador em tempo real)
+ * ATUALIZADO: Busca diretamente do Firestore (total de usuários aprovados)
  * @returns {Promise<Object>} - Dados da campanha
  */
 async function getCampaignData() {
   try {
-    const campaignDoc = await db.collection('campaigns').doc('pioneer_launch').get();
+    console.log('📊 Buscando estatísticas em tempo real...');
     
-    if (!campaignDoc.exists) {
-      console.warn('⚠️ Campanha não encontrada');
-      return null;
-    }
+    // Buscar todos os usuários aprovados do Firestore
+    const usersQuery = await db.collection('users')
+      .where('status', 'in', ['aprovado', 'approved', 'active'])
+      .get();
     
-    return campaignDoc.data();
+    const totalApprovedUsers = usersQuery.size;
+    
+    console.log(`✅ Total de usuários aprovados: ${totalApprovedUsers}`);
+    
+    // Retornar no formato esperado pela landing page
+    return {
+      stats: {
+        totalSignups: totalApprovedUsers,
+        totalUsers: totalApprovedUsers,
+        updatedAt: new Date().toISOString(),
+      },
+      tiers: {
+        founder: {
+          maxSlots: 500,
+          currentSlots: Math.min(totalApprovedUsers, 500),
+          available: Math.max(0, 500 - totalApprovedUsers),
+        },
+        pioneer: {
+          maxSlots: 1500,
+          currentSlots: Math.max(0, Math.min(totalApprovedUsers - 500, 1000)),
+          available: totalApprovedUsers > 500 ? Math.max(0, 1500 - totalApprovedUsers) : 1000,
+        },
+        early: {
+          maxSlots: 5000,
+          currentSlots: Math.max(0, Math.min(totalApprovedUsers - 1500, 3500)),
+          available: totalApprovedUsers > 1500 ? Math.max(0, 5000 - totalApprovedUsers) : 3500,
+        },
+      },
+    };
     
   } catch (error) {
     console.error('❌ Erro ao buscar campanha:', error);
-    return null;
+    
+    // Fallback: retornar estrutura padrão
+    return {
+      stats: {
+        totalSignups: 0,
+        totalUsers: 0,
+        updatedAt: new Date().toISOString(),
+      },
+      tiers: {
+        founder: { maxSlots: 500, currentSlots: 0, available: 500 },
+        pioneer: { maxSlots: 1500, currentSlots: 0, available: 1000 },
+        early: { maxSlots: 5000, currentSlots: 0, available: 3500 },
+      },
+    };
   }
 }
 

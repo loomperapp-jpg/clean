@@ -551,15 +551,17 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
-<!-- SCRIPT: Contador Dinâmico Founder 500 -->
+<!-- SCRIPT: Contador Dinâmico Founder 500 - ATUALIZADO v2.0 -->
 <script>
 async function updateFounderCounter() {
     try {
-        // Buscar dados da campanha do Firebase
+        console.log('🔄 Atualizando contador Founder 500...');
+        
+        // Buscar dados da campanha do Firebase (em tempo real)
         const campaignData = await window.LoomperFirebase.getCampaignData();
         
         if (!campaignData) {
-            console.warn('⚠️ Dados da campanha não disponíveis');
+            console.warn('⚠️ Dados da campanha não disponíveis - mantendo valores padrão');
             return;
         }
         
@@ -568,10 +570,10 @@ async function updateFounderCounter() {
         const remainingSlots = Math.max(0, founderSlots - totalSignups);
         const progressPercent = Math.min(100, (totalSignups / founderSlots) * 100);
         
-        // Atualizar contador
-        const counterElement = document.getElementById('founder-counter');
-        const progressElement = document.getElementById('founder-progress');
+        console.log(`📊 Stats: ${totalSignups} cadastros | ${remainingSlots} vagas restantes | ${progressPercent.toFixed(1)}%`);
         
+        // Atualizar contador principal (vagas restantes)
+        const counterElement = document.getElementById('founder-counter');
         if (counterElement) {
             counterElement.textContent = remainingSlots;
             
@@ -581,24 +583,43 @@ async function updateFounderCounter() {
             }
         }
         
-        if (progressElement) {
-            progressElement.style.width = progressPercent + '%';
-            progressElement.nextElementSibling.textContent = 
-                `${totalSignups} de ${founderSlots} vagas preenchidas`;
+        // Atualizar contador atual (vagas preenchidas)
+        const currentCountElement = document.getElementById('founder-current-count');
+        if (currentCountElement) {
+            currentCountElement.textContent = totalSignups;
         }
         
-        console.log(`✅ Contador atualizado: ${remainingSlots} vagas restantes`);
+        // Atualizar barra de progresso
+        const progressBarElement = document.getElementById('founder-progress-bar');
+        if (progressBarElement) {
+            progressBarElement.style.width = progressPercent + '%';
+        }
+        
+        console.log(`✅ Contador atualizado com sucesso!`);
+        console.log(`   Vagas restantes: ${remainingSlots}`);
+        console.log(`   Vagas preenchidas: ${totalSignups}`);
+        console.log(`   Progresso: ${progressPercent.toFixed(1)}%`);
         
     } catch (error) {
         console.error('❌ Erro ao atualizar contador:', error);
+        console.error('   Stack trace:', error.stack);
     }
 }
 
 // Atualizar contador ao carregar a página
-document.addEventListener('DOMContentLoaded', updateFounderCounter);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('📱 Landing Page carregada - iniciando atualização de contador');
+    
+    // Aguardar Firebase estar pronto
+    setTimeout(() => {
+        updateFounderCounter();
+    }, 1000);
+});
 
 // Atualizar a cada 30 segundos (para refletir novos cadastros em tempo real)
 setInterval(updateFounderCounter, 30000);
+
+console.log('🎯 Script de contador Founder 500 v2.0 carregado');
 </script>
 <!-- ========================================
      ❓ SEÇÃO FAQ (PERGUNTAS FREQUENTES INLINE)
