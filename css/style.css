@@ -641,9 +641,45 @@ body {
   color: #FFFFFF !important;
 }
 
+/* Botão Grupo WhatsApp Comunidade */
+.whatsapp-group-float {
+  position: fixed;
+  bottom: 95px; /* Acima do botão WhatsApp normal */
+  right: 25px;
+  background: linear-gradient(135deg, #128C7E 0%, #075E54 100%); /* Verde WhatsApp mais escuro */
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.whatsapp-group-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(18, 140, 126, 0.5);
+}
+
+.whatsapp-group-float i {
+  font-size: 20px;
+  color: #FFFFFF !important;
+}
+
+.whatsapp-group-float span {
+  color: #FFFFFF;
+}
+
 .download-apk-float {
   position: fixed;
-  bottom: 95px;
+  bottom: 165px; /* Ajustado para não sobrepor o grupo WhatsApp */
   right: 25px;
   background: linear-gradient(135deg, var(--flag-red) 0%, var(--flag-red-dark) 100%);
   color: #FFFFFF;
