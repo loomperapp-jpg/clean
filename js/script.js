@@ -152,14 +152,23 @@ const footerContent = {
     `,
     
     'stakeholders': `
-        <h3>Investidores & Parceiros</h3>
-        <p>Selecione seu perfil para contato direto com a diretoria:</p>
-        <div class="investor-grid">
-            <a href="mailto:contato@loomper.com.br?subject=Sou Anjo/Investidor - Gostaria de infos" class="investor-btn">👼 Anjo / Investidor</a>
-            <a href="mailto:contato@loomper.com.br?subject=Sou Governo - Gostaria de infos" class="investor-btn">🏛️ Governo</a>
-            <a href="mailto:contato@loomper.com.br?subject=Sou Montadora - Gostaria de infos" class="investor-btn">🏭 Montadora</a>
-            <a href="mailto:contato@loomper.com.br?subject=Sou Transportadora - Gostaria de infos" class="investor-btn">🚚 Transportadora</a>
-            <a href="mailto:contato@loomper.com.br?subject=Sou Seguradora - Gostaria de infos" class="investor-btn">🛡️ Seguradora</a>
+        <h3>Parceiros Corporativos</h3>
+        <p style="margin-bottom: 24px;">Interessado em parcerias estratégicas? Entre em contato diretamente:</p>
+        
+        <div style="background: linear-gradient(135deg, #1D3557 0%, #0B1220 100%); padding: 32px; border-radius: 16px; border: 2px solid #D90416; text-align: center;">
+            <div style="margin-bottom: 20px;">
+                <i class="fas fa-envelope" style="font-size: 48px; color: #D90416;"></i>
+            </div>
+            <p style="font-size: 18px; font-weight: 600; color: #F8F8FF; margin-bottom: 12px;">
+                E-mail Corporativo
+            </p>
+            <a href="mailto:contato@loomper.com.br?subject=Interesse em Parceria Corporativa Loomper" 
+               style="display: inline-block; background: #D90416; color: #F8F8FF; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; margin-top: 12px; transition: all 0.3s ease;">
+                contato@loomper.com.br
+            </a>
+            <p style="font-size: 14px; color: #B0B8C8; margin-top: 20px; line-height: 1.6;">
+                <strong>Para:</strong> Investidores, Governos, Montadoras, Transportadoras, Seguradoras e demais stakeholders interessados em parcerias estratégicas.
+            </p>
         </div>
     `,
     
