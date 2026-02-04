@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOOMPER | Conectamos Motoristas e Chapas Verificados</title>
-    <meta name="description" content="Plataforma que conecta motoristas cegonheiros com chapas qualificados. Sistema de créditos com vesting 36 meses para Fundadores.">
+    
+    <!-- SEO ANIMAL -->
+    <title>Encontrar Chapa Confiável e Trabalho para Motorista Cegonheiro | LOOMPER</title>
+    <meta name="description" content="Plataforma que conecta motoristas cegonheiros com chapas qualificados em minutos. Chega de improviso! Primeiros 500 ganham créditos grátis por 3 anos. Cadastre-se grátis.">
+    <meta name="keywords" content="encontrar chapa, trabalho para chapa, motorista cegonheiro, transporte de veículos, chapa automotivo, ajudante de motorista, cegonha, logística automotiva">
+    <meta name="author" content="Loomper - Ajud.ai Brasil">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="LOOMPER - Conecta Motorista e Chapa em Minutos">
+    <meta property="og:description" content="Chega de improviso! Encontre chapa confiável ou trabalho garantido. Primeiros 500 ganham benefícios por 3 anos.">
+    <meta property="og:url" content="https://www.loomper.com.br">
+    <meta property="og:type" content="website">
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/FAVICON_Loomper.png">
@@ -15,651 +25,792 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Loomper",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Ajud.ai Brasil Inova Simples",
+        "legalName": "Ajud.ai Brasil Inova Simples (I.S.)",
+        "taxID": "59.150.688/0001-39",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Bernardo do Campo",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-11-96585-8142",
+          "contactType": "Customer Service",
+          "availableLanguage": "Portuguese"
+        }
+      }
+    }
+    </script>
     
     <style>
-        /* ========================
-           DESIGN SYSTEM V5.0
-           Mobile-First, Professional, Sustentável
-           ======================== */
+        /* ===========================
+           DESIGN SYSTEM V6.0 FINAL
+           Mobile-First | SEO | Conversão
+        =========================== */
         
         :root {
-            /* Cores oficiais Loomper */
             --primary: #D90416;
             --secondary: #1D3557;
             --accent: #0B1220;
             --light: #F8F8FF;
+            --gray-50: #FAFAFA;
             --gray-100: #F5F5F7;
-            --gray-200: #E5E5EA;
-            --gray-300: #D1D1D6;
-            --gray-600: #8E8E93;
-            --gray-900: #1C1C1E;
+            --gray-600: #6B7280;
+            --gray-900: #111827;
+            --success: #10B981;
+            --warning: #F59E0B;
             
-            /* Typography */
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-            
-            /* Spacing (mobile-first) */
-            --space-xs: clamp(8px, 2vw, 12px);
-            --space-sm: clamp(12px, 3vw, 16px);
-            --space-md: clamp(16px, 4vw, 24px);
-            --space-lg: clamp(24px, 6vw, 32px);
-            --space-xl: clamp(32px, 8vw, 48px);
-            
-            /* Radius */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 20px rgba(0,0,0,0.10);
+            --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+            --radius: 12px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         
         body {
             font-family: var(--font-sans);
-            background: var(--light);
+            background: var(--gray-50);
             color: var(--gray-900);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* ========================
-           HERO SECTION
-           ======================== */
+        /* HERO */
         .hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
-            color: var(--light);
-            padding: var(--space-lg) var(--space-md);
+            color: white;
+            padding: 60px 20px 40px;
             text-align: center;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+        
+        .hero__tagline {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
         
         .hero__logo {
-            width: clamp(120px, 30vw, 180px);
-            margin-bottom: var(--space-md);
+            width: 160px;
+            margin-bottom: 24px;
         }
         
         .hero__title {
             font-size: clamp(28px, 7vw, 48px);
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: var(--space-sm);
-            letter-spacing: -0.02em;
+            margin-bottom: 16px;
         }
         
         .hero__subtitle {
             font-size: clamp(16px, 4vw, 20px);
-            font-weight: 400;
             opacity: 0.9;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 32px;
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .hero__cta {
+        .hero__ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .btn {
             display: inline-block;
-            background: var(--primary);
-            color: white;
             padding: 16px 32px;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius);
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             text-decoration: none;
-            box-shadow: var(--shadow-lg);
+            text-align: center;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .hero__cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(217, 4, 22, 0.3);
+        .btn:active { transform: scale(0.98); }
+        
+        .btn--primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-lg);
         }
         
-        /* ========================
-           SECTIONS
-           ======================== */
+        .btn--secondary {
+            background: white;
+            color: var(--secondary);
+            border: 2px solid white;
+        }
+        
+        @media (min-width: 640px) {
+            .hero__ctas {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        /* SECTIONS */
         .section {
-            padding: var(--space-xl) var(--space-md);
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .section__title {
-            font-size: clamp(24px, 6vw, 36px);
+            font-size: clamp(28px, 6vw, 40px);
             font-weight: 700;
             text-align: center;
-            margin-bottom: var(--space-md);
+            margin-bottom: 16px;
             color: var(--accent);
         }
         
         .section__subtitle {
-            font-size: clamp(14px, 3.5vw, 18px);
+            font-size: 18px;
             text-align: center;
             color: var(--gray-600);
-            margin-bottom: var(--space-lg);
+            margin-bottom: 48px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        /* ========================
-           GRID SYSTEM
-           ======================== */
-        .grid {
+        /* PAIN CARDS (CLICÁVEIS) */
+        .pain-grid {
             display: grid;
-            gap: var(--space-md);
+            gap: 20px;
             grid-template-columns: 1fr;
         }
         
         @media (min-width: 768px) {
-            .grid--2 { grid-template-columns: repeat(2, 1fr); }
-            .grid--3 { grid-template-columns: repeat(3, 1fr); }
+            .pain-grid { grid-template-columns: repeat(3, 1fr); }
         }
         
-        /* ========================
-           CARDS
-           ======================== */
-        .card {
+        .pain-card {
             background: white;
-            border-radius: var(--radius-md);
-            padding: var(--space-md);
-            box-shadow: var(--shadow-md);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .card__icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), #FF4757);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--space-sm);
-            color: white;
-            font-size: 24px;
-        }
-        
-        .card__title {
-            font-size: clamp(18px, 4vw, 22px);
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
-            color: var(--accent);
-        }
-        
-        .card__text {
-            font-size: 14px;
-            color: var(--gray-600);
-            line-height: 1.5;
-        }
-        
-        /* ========================
-           PRICING (VESTING)
-           ======================== */
-        .pricing-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            box-shadow: var(--shadow-lg);
-            border: 2px solid var(--gray-200);
-            position: relative;
-        }
-        
-        .pricing-card--featured {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-        
-        .pricing-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .pricing__tier {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--gray-600);
-            margin-bottom: var(--space-xs);
-        }
-        
-        .pricing__title {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .pricing__vesting {
-            background: var(--gray-100);
-            padding: var(--space-sm);
-            border-radius: var(--radius-sm);
-            margin-bottom: var(--space-md);
-        }
-        
-        .pricing__year {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .pricing__year:last-child {
-            border-bottom: none;
-        }
-        
-        .pricing__benefits {
-            margin-top: var(--space-md);
-        }
-        
-        .pricing__benefit {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            margin-bottom: var(--space-xs);
-            font-size: 14px;
-        }
-        
-        .pricing__benefit i {
-            color: var(--primary);
-            margin-top: 4px;
-        }
-        
-        /* ========================
-           FAQ ACCORDION
-           ======================== */
-        .faq {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            background: white;
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-sm);
-            box-shadow: var(--shadow-sm);
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: var(--space-md);
-            background: none;
-            border: none;
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--accent);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            box-shadow: var(--shadow);
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
         
-        .faq-question:hover {
-            background: var(--gray-100);
+        .pain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
         
-        .faq-icon {
-            transition: transform 0.3s;
+        .pain-card__emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
         }
         
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
+        .pain-card__title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--accent);
         }
         
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-        
-        .faq-answer-content {
-            padding: 0 var(--space-md) var(--space-md);
-            color: var(--gray-600);
+        .pain-card__pain {
             font-size: 14px;
+            color: var(--gray-600);
             line-height: 1.6;
         }
         
-        /* ========================
-           FOOTER
-           ======================== */
-        .footer {
-            background: var(--accent);
-            color: var(--light);
-            padding: var(--space-lg) var(--space-md);
+        .pain-card__cta {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            padding: 20px;
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.active { display: flex; align-items: center; justify-content: center; }
+        
+        .modal__content {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            animation: slideUp 0.3s;
+        }
+        
+        .modal__close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-600);
+        }
+        
+        .modal__emoji { font-size: 64px; text-align: center; margin-bottom: 16px; }
+        .modal__title { font-size: 28px; font-weight: 700; margin-bottom: 16px; color: var(--accent); text-align: center; }
+        .modal__benefits { margin-top: 24px; }
+        .modal__benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 12px;
+            background: var(--gray-100);
+            border-radius: 8px;
+        }
+        .modal__benefit i { color: var(--success); margin-top: 4px; font-size: 20px; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        /* FOUNDER 500 */
+        .founder {
+            background: linear-gradient(135deg, var(--primary) 0%, #C70414 100%);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
         }
         
-        .footer__text {
+        .founder__badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .founder__counter {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-size: 24px;
+            font-weight: 700;
+            margin: 24px 0;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .founder__counter-number {
+            color: #FFD700;
+            font-size: 36px;
+        }
+        
+        .founder__benefits {
+            max-width: 600px;
+            margin: 32px auto;
+            text-align: left;
+        }
+        
+        .founder__benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        
+        .founder__benefit i { font-size: 24px; color: #FFD700; margin-top: 2px; }
+        
+        /* APOIE */
+        .support {
+            background: var(--gray-100);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .support__values {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            max-width: 800px;
+            margin: 32px auto 0;
+        }
+        
+        @media (min-width: 640px) {
+            .support__values { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        .support__value {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .support__value i { font-size: 32px; color: var(--primary); margin-bottom: 12px; }
+        .support__value h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .support__value p { font-size: 14px; color: var(--gray-600); }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--accent);
+            color: rgba(255,255,255,0.9);
+            padding: 48px 20px 32px;
+            text-align: center;
+        }
+        
+        .footer__brand {
+            margin-bottom: 24px;
+        }
+        
+        .footer__trademark {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .footer__tagline {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 16px;
+        }
+        
+        .footer__company {
             font-size: 14px;
             opacity: 0.8;
+            margin-bottom: 24px;
+        }
+        
+        .footer__contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto 24px;
+        }
+        
+        .footer__contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer__contact:hover { opacity: 0.8; }
+        
+        .footer__links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
         
         .footer__link {
-            color: var(--light);
-            text-decoration: underline;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+        .footer__link:hover { color: white; }
+        
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+            z-index: 9998;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
         }
     </style>
 </head>
 <body>
     <!-- HERO -->
     <section class="hero">
+        <div class="hero__tagline">Logística • Tecnologia • ESG • Pessoas</div>
         <img src="assets/images/logotipo.PNG" alt="Loomper Logo" class="hero__logo">
-        <h1 class="hero__title">Conectamos Motoristas e Chapas Verificados</h1>
+        <h1 class="hero__title">Conecta Motorista e Chapa em Minutos</h1>
         <p class="hero__subtitle">
-            Plataforma completa com sistema de créditos sustentável. Primeiros 500 fundadores ganham benefícios por 36 meses.
+            Chega de improviso na descarga! Chega de ficar na rua esperando trampo!
         </p>
-        <a href="https://app.loomper.com.br?perfil=founder" class="hero__cta">
-            Seja Fundador 🏆
+        <div class="hero__ctas">
+            <a href="https://app.loomper.com.br" class="btn btn--primary">
+                <i class="fas fa-rocket"></i> Testar App Web
+            </a>
+            <a href="https://app.loomper.com.br?perfil=founder" class="btn btn--secondary">
+                <i class="fas fa-crown"></i> Ser Fundador (500 vagas)
+            </a>
+        </div>
+    </section>
+    
+    <!-- POR QUE O LOOMPER EXISTE -->
+    <section class="section">
+        <h2 class="section__title">Por Que o Loomper Existe?</h2>
+        <p class="section__subtitle">Clique no seu perfil para ver como resolvemos o seu problema</p>
+        
+        <div class="pain-grid">
+            <!-- MOTORISTA -->
+            <div class="pain-card" onclick="openModal('motorista')">
+                <div class="pain-card__emoji">🚛</div>
+                <h3 class="pain-card__title">Sou Motorista</h3>
+                <div class="pain-card__pain">
+                    😡 Improviso na descarga é arriscado<br>
+                    😡 Chapa desconhecido = prejuízo<br>
+                    😡 Perder tempo = dinheiro perdido
+                </div>
+                <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
+            </div>
+            
+            <!-- CHAPA -->
+            <div class="pain-card" onclick="openModal('chapa')">
+                <div class="pain-card__emoji">👷</div>
+                <h3 class="pain-card__title">Sou Chapa</h3>
+                <div class="pain-card__pain">
+                    😡 Ficar na rua é humilhante<br>
+                    😡 Trabalho irregular, sem garantia<br>
+                    😡 Ninguém vê meu histórico
+                </div>
+                <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
+            </div>
+            
+            <!-- TRANSPORTADORA -->
+            <div class="pain-card" onclick="openModal('transportadora')">
+                <div class="pain-card__emoji">🏢</div>
+                <h3 class="pain-card__title">Sou Transportadora</h3>
+                <div class="pain-card__pain">
+                    😡 Atraso na entrega = multa<br>
+                    😡 Mão de obra não qualificada = risco<br>
+                    😡 Custo operacional alto
+                </div>
+                <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CAMPANHA FOUNDER 500 -->
+    <section class="founder">
+        <div class="founder__badge">🏆 CAMPANHA EXCLUSIVA</div>
+        <h2 class="section__title" style="color: white;">Primeiros 500 Ganham Benefícios por 3 Anos</h2>
+        <p style="font-size: 18px; opacity: 0.9; margin-bottom: 8px;">Seja um dos fundadores do Loomper!</p>
+        
+        <div class="founder__counter">
+            RESTAM: <span class="founder__counter-number" id="vagasRestantes">487</span>/500 VAGAS
+        </div>
+        
+        <div class="founder__benefits">
+            <div class="founder__benefit">
+                <i class="fas fa-gift"></i>
+                <div>
+                    <strong>Créditos Grátis por 3 Anos</strong><br>
+                    <span style="opacity: 0.9; font-size: 14px;">Receba créditos mensais para usar na plataforma sem pagar nada</span>
+                </div>
+            </div>
+            <div class="founder__benefit">
+                <i class="fas fa-tag"></i>
+                <div>
+                    <strong>Desconto de 10% Pra Sempre</strong><br>
+                    <span style="opacity: 0.9; font-size: 14px;">Após os 3 anos, você continua pagando menos que todo mundo</span>
+                </div>
+            </div>
+            <div class="founder__benefit">
+                <i class="fas fa-medal"></i>
+                <div>
+                    <strong>Selo "Fundador" no Perfil</strong><br>
+                    <span style="opacity: 0.9; font-size: 14px;">Todo mundo vê que você acreditou no projeto desde o início</span>
+                </div>
+            </div>
+            <div class="founder__benefit">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <strong>Suporte Prioritário</strong><br>
+                    <span style="opacity: 0.9; font-size: 14px;">Suas dúvidas são respondidas em até 12 horas</span>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://app.loomper.com.br?perfil=founder" class="btn btn--secondary" style="background: white; color: var(--primary); font-size: 18px;">
+            <i class="fas fa-crown"></i> QUERO SER FUNDADOR
         </a>
-    </section>
-    
-    <!-- COMO FUNCIONA -->
-    <section class="section">
-        <h2 class="section__title">Como Funciona o Loomper</h2>
-        <p class="section__subtitle">Processo simples em 3 passos para começar</p>
         
-        <div class="grid grid--3">
-            <div class="card">
-                <div class="card__icon"><i class="fas fa-user-plus"></i></div>
-                <h3 class="card__title">1. Cadastro Gratuito</h3>
-                <p class="card__text">
-                    Crie sua conta em menos de 2 minutos. Validamos seu perfil para garantir segurança e qualidade.
-                </p>
-            </div>
-            
-            <div class="card">
-                <div class="card__icon"><i class="fas fa-search-location"></i></div>
-                <h3 class="card__title">2. Conecte-se</h3>
-                <p class="card__text">
-                    Motoristas encontram chapas qualificados. Chapas recebem oportunidades reais de trabalho próximas de você.
-                </p>
-            </div>
-            
-            <div class="card">
-                <div class="card__icon"><i class="fas fa-handshake"></i></div>
-                <h3 class="card__title">3. Trabalhe com Segurança</h3>
-                <p class="card__text">
-                    Sistema de avaliações, histórico profissional e pagamento digital. Tudo documentado e protegido.
-                </p>
-            </div>
-        </div>
+        <p style="font-size: 13px; opacity: 0.8; margin-top: 24px;">
+            * Condição: fazer login pelo menos 1 vez a cada 3 meses
+        </p>
     </section>
     
-    <!-- PROGRAMA FUNDADORES (VESTING) -->
-    <section class="section" style="background: var(--gray-100); margin: 0; max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md);">
-            <h2 class="section__title">Programa Fundadores - Vesting 36 Meses</h2>
-            <p class="section__subtitle">
-                Benefícios decrescentes por 3 anos + desconto vitalício de 10%
-            </p>
-            
-            <div class="grid grid--3" style="margin-top: var(--space-lg);">
-                <!-- TIER OURO -->
-                <div class="pricing-card pricing-card--featured">
-                    <div class="pricing-badge">🏆 Mais Popular</div>
-                    <div class="pricing__tier">Tier Ouro</div>
-                    <h3 class="pricing__title">Fundadores</h3>
-                    <p style="font-size: 12px; color: var(--gray-600); margin-bottom: var(--space-sm);">
-                        Primeiros 500 usuários
-                    </p>
-                    
-                    <div class="pricing__vesting">
-                        <div class="pricing__year">
-                            <span><strong>Ano 1:</strong> 500 CR/mês</span>
-                            <span style="color: var(--primary);">1.5x</span>
-                        </div>
-                        <div class="pricing__year">
-                            <span><strong>Ano 2:</strong> 250 CR/mês</span>
-                            <span style="color: var(--primary);">1.3x</span>
-                        </div>
-                        <div class="pricing__year">
-                            <span><strong>Ano 3:</strong> 100 CR/mês</span>
-                            <span style="color: var(--primary);">1.15x</span>
-                        </div>
-                        <div style="text-align: center; margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 2px solid var(--gray-300); font-weight: 600;">
-                            Total: R$ 15.000 em 36 meses
-                        </div>
-                    </div>
-                    
-                    <div class="pricing__benefits">
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Badge Fundador vitalício</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Desconto 10% perpétuo pós-vesting</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Suporte prioritário (SLA 12h)</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Voz ativa no roadmap</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- TIER PRATA -->
-                <div class="pricing-card">
-                    <div class="pricing__tier">Tier Prata</div>
-                    <h3 class="pricing__title">Pioneiros</h3>
-                    <p style="font-size: 12px; color: var(--gray-600); margin-bottom: var(--space-sm);">
-                        Usuários 501-1.500
-                    </p>
-                    
-                    <div class="pricing__vesting">
-                        <div class="pricing__year">
-                            <span><strong>Ano 1:</strong> 350 CR/mês</span>
-                            <span style="color: var(--primary);">1.3x</span>
-                        </div>
-                        <div class="pricing__year">
-                            <span><strong>Ano 2:</strong> 150 CR/mês</span>
-                            <span style="color: var(--primary);">1.15x</span>
-                        </div>
-                        <div style="text-align: center; margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 2px solid var(--gray-300); font-weight: 600;">
-                            Total: R$ 8.000 em 24 meses
-                        </div>
-                    </div>
-                    
-                    <div class="pricing__benefits">
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Badge Pioneiro vitalício</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Desconto 7% perpétuo</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Suporte prioritário (24h)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- TIER BRONZE -->
-                <div class="pricing-card">
-                    <div class="pricing__tier">Tier Bronze</div>
-                    <h3 class="pricing__title">Early Adopters</h3>
-                    <p style="font-size: 12px; color: var(--gray-600); margin-bottom: var(--space-sm);">
-                        Usuários 1.501-5.000
-                    </p>
-                    
-                    <div class="pricing__vesting">
-                        <div class="pricing__year">
-                            <span><strong>Ano 1:</strong> 250 CR/mês</span>
-                            <span style="color: var(--primary);">1.15x</span>
-                        </div>
-                        <div style="text-align: center; margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 2px solid var(--gray-300); font-weight: 600;">
-                            Total: R$ 4.000 em 12 meses
-                        </div>
-                    </div>
-                    
-                    <div class="pricing__benefits">
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Badge Early Adopter vitalício</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Desconto 5% perpétuo</span>
-                        </div>
-                        <div class="pricing__benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Suporte prioritário (12 meses)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: var(--space-lg); font-size: 14px; color: var(--gray-600);">
-                <strong>Condição:</strong> Login mínimo 1x a cada 90 dias para manter benefícios ativos
-            </p>
-        </div>
-    </section>
-    
-    <!-- FAQ -->
-    <section class="section">
-        <h2 class="section__title">Perguntas Frequentes</h2>
-        <p class="section__subtitle">Tudo o que você precisa saber sobre a Política de Créditos V3.0</p>
+    <!-- APOIE O PROJETO -->
+    <section class="support">
+        <h2 class="section__title">💪 Apoie o Loomper</h2>
+        <p class="section__subtitle">
+            Somos uma startup brasileira que acredita em dignidade, tecnologia e oportunidades justas
+        </p>
         
-        <div class="faq">
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>O que é o sistema de vesting?</span>
-                    <i class="fas fa-chevron-down faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        <p>Vesting é um sistema de benefícios decrescentes ao longo do tempo. Fundadores recebem créditos mensais e multipliers por 36 meses, com valores maiores nos primeiros anos. Após o vesting, você mantém o badge e desconto vitalício de 10%.</p>
-                    </div>
-                </div>
+        <div class="support__values">
+            <div class="support__value">
+                <i class="fas fa-heart"></i>
+                <h3>Dignidade no Trabalho</h3>
+                <p>Todo trabalhador merece respeito e reconhecimento profissional</p>
             </div>
-            
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Os créditos expiram?</span>
-                    <i class="fas fa-chevron-down faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        <p><strong>Créditos Pagos:</strong> NUNCA expiram.<br>
-                        <strong>Créditos Promocionais:</strong> Expiram em 24 meses.<br>
-                        <strong>Créditos de Campanha:</strong> Renovam mensalmente (dia 1º), mas não acumulam.</p>
-                    </div>
-                </div>
+            <div class="support__value">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Tecnologia Acessível</h3>
+                <p>Ferramenta simples que qualquer pessoa consegue usar</p>
             </div>
-            
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Como funciona o programa de indicações?</span>
-                    <i class="fas fa-chevron-down faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        <p><strong>Nível 1:</strong> 10% de cashback nas compras do indicado por 12 meses (cap R$ 200/mês).<br>
-                        <strong>Nível 2:</strong> 5% de cashback por 6 meses (cap R$ 50/mês).<br>
-                        Bônus imediato de 500 CR quando seu indicado comprar mínimo R$ 50.</p>
-                    </div>
-                </div>
+            <div class="support__value">
+                <i class="fas fa-handshake"></i>
+                <h3>Oportunidades Justas</h3>
+                <p>Conectar quem precisa trabalhar com quem precisa de ajuda</p>
             </div>
-            
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Chapas também pagam para usar?</span>
-                    <i class="fas fa-chevron-down faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        <p><strong>NÃO!</strong> Chapas têm acesso 100% gratuito. Sem mensalidade, sem taxa de cadastro, sem comissão por serviço. Ganham reputação digital, histórico profissional e oportunidades reais de trabalho.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>E se a empresa for vendida (M&A)?</span>
-                    <i class="fas fa-chevron-down faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        <p><strong>Garantias contratuais:</strong><br>
-                        • Badge Fundador permanece<br>
-                        • Desconto 10% honrado por mínimo 5 anos<br>
-                        • Créditos acumulados conversíveis em dinheiro<br>
-                        • Pagamento via PIX em até 30 dias</p>
-                    </div>
-                </div>
+            <div class="support__value">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Segurança e Confiança</h3>
+                <p>Histórico, avaliações e pagamento protegido</p>
             </div>
         </div>
+        
+        <a href="https://app.loomper.com.br" class="btn btn--primary" style="margin-top: 32px;">
+            CADASTRE-SE GRÁTIS E FAÇA PARTE
+        </a>
     </section>
     
     <!-- FOOTER -->
     <footer class="footer">
-        <p class="footer__text">
-            © 2026 Loomper Connect - Gestão: Ajud.ai Brasil Inova Simples<br>
-            <a href="mailto:contato@loomper.com.br" class="footer__link">contato@loomper.com.br</a>
+        <div class="footer__brand">
+            <div class="footer__trademark">LOOMPER<sup>®</sup></div>
+            <div class="footer__tagline">Marca Registrada</div>
+            <div class="footer__company">
+                Uma empresa do Grupo Ajud.AI<br>
+                <strong>Ajud.ai Brasil Inova Simples (I.S.)</strong><br>
+                CNPJ: 59.150.688/0001-39<br>
+                São Bernardo do Campo • SP • Brasil
+            </div>
+        </div>
+        
+        <div class="footer__contacts">
+            <a href="https://wa.me/5511965858142" class="footer__contact" target="_blank">
+                <i class="fab fa-whatsapp"></i> +55 11 96585-8142
+            </a>
+            <a href="mailto:contato@loomper.com.br" class="footer__contact">
+                <i class="fas fa-envelope"></i> contato@loomper.com.br
+            </a>
+        </div>
+        
+        <div class="footer__links">
+            <a href="https://loomper.com.br/terms.html" class="footer__link">Termos de Uso</a>
+            <a href="https://loomper.com.br/privacy.html" class="footer__link">Política de Privacidade</a>
+        </div>
+        
+        <p style="margin-top: 24px; font-size: 12px; opacity: 0.6;">
+            © 2026 Loomper. Todos os direitos reservados.
         </p>
     </footer>
     
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5511965858142?text=Olá! Vim do site do Loomper e tenho uma dúvida" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- MODAIS -->
+    <div id="modal-motorista" class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal('motorista')">×</button>
+            <div class="modal__emoji">🚛</div>
+            <h3 class="modal__title">Como o Loomper Ajuda Motoristas</h3>
+            <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
+                Você encontra chapa confiável em 2 minutos, sem improviso
+            </p>
+            <div class="modal__benefits">
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Busca por localização:</strong> Chapas perto de você, verificados e avaliados</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Histórico completo:</strong> Veja quantos serviços o chapa já fez e a nota dele</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Pagamento digital:</strong> Pague por PIX direto pelo app, tudo documentado</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Você paga apenas quando usar:</strong> 250 créditos por serviço (≈ R$ 30 por chapa contratado)</div>
+                </div>
+            </div>
+            <a href="https://app.loomper.com.br" class="btn btn--primary" style="width: 100%; margin-top: 24px;">
+                CADASTRAR COMO MOTORISTA
+            </a>
+        </div>
+    </div>
+    
+    <div id="modal-chapa" class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal('chapa')">×</button>
+            <div class="modal__emoji">👷</div>
+            <h3 class="modal__title">Como o Loomper Ajuda Chapas</h3>
+            <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
+                Oportunidades chegam direto no seu celular, sem ficar na rua
+            </p>
+            <div class="modal__benefits">
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>100% GRÁTIS:</strong> Cadastro grátis, sem mensalidade, sem taxa por serviço</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Trabalho no celular:</strong> Receba notificação de oportunidades perto de você</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Seu histórico profissional:</strong> Cada serviço vira avaliação no seu perfil</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Pagamento garantido:</strong> Combina o valor antes, recebe por PIX documentado</div>
+                </div>
+            </div>
+            <a href="https://app.loomper.com.br" class="btn btn--primary" style="width: 100%; margin-top: 24px;">
+                CADASTRAR COMO CHAPA
+            </a>
+        </div>
+    </div>
+    
+    <div id="modal-transportadora" class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal('transportadora')">×</button>
+            <div class="modal__emoji">🏢</div>
+            <h3 class="modal__title">Como o Loomper Ajuda Transportadoras</h3>
+            <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
+                Seus motoristas encontram mão de obra qualificada rapidamente
+            </p>
+            <div class="modal__benefits">
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Menos atraso:</strong> Motorista encontra chapa em minutos, não em horas</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Qualidade garantida:</strong> Apenas chapas com histórico e boas avaliações</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Gestão completa:</strong> Dashboard com todas as contratações da frota</div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <div><strong>Economia operacional:</strong> Menos improviso = menos prejuízo</div>
+                </div>
+            </div>
+            <a href="https://app.loomper.com.br" class="btn btn--primary" style="width: 100%; margin-top: 24px;">
+                CADASTRAR TRANSPORTADORA
+            </a>
+        </div>
+    </div>
+    
     <!-- JAVASCRIPT -->
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Fecha todos os outros
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Abre o clicado (se não estava aberto)
-                if (!isActive) {
-                    faqItem.classList.add('active');
+        // MODAL
+        function openModal(id) {
+            document.getElementById('modal-' + id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(id) {
+            document.getElementById('modal-' + id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fechar modal ao clicar fora
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
             });
         });
+        
+        // CONTADOR DE VAGAS (simulado - depois conectar com Firebase)
+        function atualizarContador() {
+            const vagasRestantes = 500 - 13; // 487 vagas restantes
+            document.getElementById('vagasRestantes').textContent = vagasRestantes;
+        }
+        
+        atualizarContador();
     </script>
 </body>
 </html>
