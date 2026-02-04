@@ -230,9 +230,10 @@
             border-color: var(--primary);
         }
         
-        .pain-card__emoji {
+        .pain-card__icon {
             font-size: 48px;
             margin-bottom: 16px;
+            color: var(--primary);
         }
         
         .pain-card__title {
@@ -294,7 +295,7 @@
             color: var(--gray-600);
         }
         
-        .modal__emoji { font-size: 64px; text-align: center; margin-bottom: 16px; }
+        .modal__icon { font-size: 64px; text-align: center; margin-bottom: 16px; color: var(--primary); }
         .modal__title { font-size: 28px; font-weight: 700; margin-bottom: 16px; color: var(--accent); text-align: center; }
         .modal__benefits { margin-top: 24px; }
         .modal__benefit {
@@ -516,9 +517,23 @@
             color: rgba(255,255,255,0.7);
             text-decoration: none;
             font-size: 13px;
+            transition: all 0.3s;
         }
         
         .footer__link:hover { color: white; }
+        
+        .footer__link--support {
+            color: var(--primary);
+            font-weight: 600;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        .footer__link--support:hover {
+            background: var(--light);
+            transform: scale(1.05);
+        }
         
         /* WHATSAPP FLUTUANTE */
         .whatsapp-float {
@@ -580,36 +595,36 @@
         <div class="pain-grid">
             <!-- MOTORISTA -->
             <div class="pain-card" onclick="openModal('motorista')">
-                <div class="pain-card__emoji">🚛</div>
+                <div class="pain-card__icon"><i class="fas fa-truck"></i></div>
                 <h3 class="pain-card__title">Sou Motorista</h3>
                 <div class="pain-card__pain">
-                    😡 Improviso na descarga é arriscado<br>
-                    😡 Chapa desconhecido = prejuízo<br>
-                    😡 Perder tempo = dinheiro perdido
+                    ❌ Improviso na descarga é arriscado<br>
+                    ❌ Chapa desconhecido = prejuízo<br>
+                    ❌ Perder tempo = dinheiro perdido
                 </div>
                 <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
             </div>
             
             <!-- CHAPA -->
             <div class="pain-card" onclick="openModal('chapa')">
-                <div class="pain-card__emoji">👷</div>
+                <div class="pain-card__icon"><i class="fas fa-hard-hat"></i></div>
                 <h3 class="pain-card__title">Sou Chapa</h3>
                 <div class="pain-card__pain">
-                    😡 Ficar na rua é humilhante<br>
-                    😡 Trabalho irregular, sem garantia<br>
-                    😡 Ninguém vê meu histórico
+                    ❌ Ficar na rua é humilhante<br>
+                    ❌ Trabalho irregular, sem garantia<br>
+                    ❌ Ninguém vê meu histórico
                 </div>
                 <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
             </div>
             
             <!-- TRANSPORTADORA -->
             <div class="pain-card" onclick="openModal('transportadora')">
-                <div class="pain-card__emoji">🏢</div>
+                <div class="pain-card__icon"><i class="fas fa-building"></i></div>
                 <h3 class="pain-card__title">Sou Transportadora</h3>
                 <div class="pain-card__pain">
-                    😡 Atraso na entrega = multa<br>
-                    😡 Mão de obra não qualificada = risco<br>
-                    😡 Custo operacional alto
+                    ❌ Atraso na entrega = multa<br>
+                    ❌ Mão de obra não qualificada = risco<br>
+                    ❌ Custo operacional alto
                 </div>
                 <span class="pain-card__cta">Ver solução <i class="fas fa-arrow-right"></i></span>
             </div>
@@ -618,7 +633,7 @@
     
     <!-- CAMPANHA FOUNDER 500 -->
     <section class="founder">
-        <div class="founder__badge">🏆 CAMPANHA EXCLUSIVA</div>
+        <div class="founder__badge"><i class="fas fa-crown"></i> CAMPANHA EXCLUSIVA</div>
         <h2 class="section__title" style="color: var(--accent);">Primeiros 500 Ganham Benefícios por 3 Anos</h2>
         <p style="font-size: 18px; color: var(--gray-600); margin-bottom: 8px;">Seja um dos fundadores do Loomper!</p>
         
@@ -668,7 +683,7 @@
     
     <!-- APOIE O PROJETO -->
     <section class="support">
-        <h2 class="section__title">💪 Apoie o Loomper</h2>
+        <h2 class="section__title">Nossa Missão</h2>
         <p class="section__subtitle">
             Somos uma startup brasileira que acredita em dignidade, tecnologia e oportunidades justas
         </p>
@@ -699,26 +714,6 @@
         <a href="https://app.loomper.com.br" class="btn btn--primary" style="margin-top: 32px;">
             CADASTRE-SE GRÁTIS E FAÇA PARTE
         </a>
-        
-        <!-- PIX SECTION -->
-        <div class="support__pix">
-            <i class="fas fa-hand-holding-heart" style="font-size: 48px; margin-bottom: 16px;"></i>
-            <h3>💰 Toda Ajuda é Bem-Vinda!</h3>
-            <p>
-                Somos uma startup que está começando. Se você acredita no projeto e quer ajudar a manter a plataforma no ar, qualquer contribuição faz diferença!
-            </p>
-            
-            <div class="pix-info">
-                <strong>Chave PIX (Email):</strong>
-                <div class="pix-key" onclick="copyPix()" title="Clique para copiar">
-                    contato@loomper.com.br
-                </div>
-            </div>
-            
-            <p style="font-size: 14px; opacity: 0.9;">
-                Qualquer valor ajuda no desenvolvimento de novas funcionalidades e suporte aos usuários! ❤️
-            </p>
-        </div>
     </section>
     
     <!-- FOOTER -->
@@ -746,6 +741,9 @@
         <div class="footer__links">
             <a href="https://loomper.com.br/terms.html" class="footer__link">Termos de Uso</a>
             <a href="https://loomper.com.br/privacy.html" class="footer__link">Política de Privacidade</a>
+            <a href="javascript:void(0)" onclick="openModal('apoie')" class="footer__link footer__link--support">
+                <i class="fas fa-heart"></i> APOIE
+            </a>
         </div>
         
         <p style="margin-top: 24px; font-size: 12px; opacity: 0.6;">
@@ -765,7 +763,7 @@
     <div id="modal-motorista" class="modal">
         <div class="modal__content">
             <button class="modal__close" onclick="closeModal('motorista')">×</button>
-            <div class="modal__emoji">🚛</div>
+            <div class="modal__icon"><i class="fas fa-truck"></i></div>
             <h3 class="modal__title">Como o Loomper Ajuda Motoristas</h3>
             <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
                 Você encontra chapa confiável em 2 minutos, sem improviso
@@ -797,7 +795,7 @@
     <div id="modal-chapa" class="modal">
         <div class="modal__content">
             <button class="modal__close" onclick="closeModal('chapa')">×</button>
-            <div class="modal__emoji">👷</div>
+            <div class="modal__icon"><i class="fas fa-hard-hat"></i></div>
             <h3 class="modal__title">Como o Loomper Ajuda Chapas</h3>
             <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
                 Oportunidades chegam direto no seu celular, sem ficar na rua
@@ -829,7 +827,7 @@
     <div id="modal-transportadora" class="modal">
         <div class="modal__content">
             <button class="modal__close" onclick="closeModal('transportadora')">×</button>
-            <div class="modal__emoji">🏢</div>
+            <div class="modal__icon"><i class="fas fa-building"></i></div>
             <h3 class="modal__title">Como o Loomper Ajuda Transportadoras</h3>
             <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
                 Seus motoristas encontram mão de obra qualificada rapidamente
@@ -855,6 +853,48 @@
             <a href="https://app.loomper.com.br" class="btn btn--primary" style="width: 100%; margin-top: 24px;">
                 CADASTRAR TRANSPORTADORA
             </a>
+        </div>
+    </div>
+    
+    <!-- MODAL APOIE -->
+    <div id="modal-apoie" class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="closeModal('apoie')">×</button>
+            <div class="modal__icon"><i class="fas fa-heart"></i></div>
+            <h3 class="modal__title">Apoie o Loomper</h3>
+            <p style="text-align: center; color: var(--gray-600); margin-bottom: 24px;">
+                Somos uma startup brasileira que está começando. Se você acredita no projeto, qualquer contribuição faz diferença!
+            </p>
+            
+            <div class="modal__benefits">
+                <div class="modal__benefit">
+                    <i class="fas fa-rocket"></i>
+                    <div><strong>Desenvolvimento de novas funcionalidades</strong></div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-server"></i>
+                    <div><strong>Manutenção dos servidores e infraestrutura</strong></div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-headset"></i>
+                    <div><strong>Suporte aos usuários e melhorias contínuas</strong></div>
+                </div>
+                <div class="modal__benefit">
+                    <i class="fas fa-users"></i>
+                    <div><strong>Crescimento da comunidade Loomper</strong></div>
+                </div>
+            </div>
+            
+            <div class="pix-info" style="margin-top: 32px;">
+                <strong>Chave PIX (Email):</strong>
+                <div class="pix-key" onclick="copyPix()" title="Clique para copiar">
+                    contato@loomper.com.br
+                </div>
+            </div>
+            
+            <p style="font-size: 14px; color: var(--gray-600); margin-top: 16px; text-align: center;">
+                Qualquer valor ajuda! Clique na chave PIX para copiar automaticamente.
+            </p>
         </div>
     </div>
     
