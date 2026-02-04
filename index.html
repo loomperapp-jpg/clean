@@ -311,38 +311,44 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         
-        /* FOUNDER 500 */
+        /* FOUNDER 500 - FUNDO BRANCO COM BORDAS */
         .founder {
-            background: linear-gradient(135deg, var(--primary) 0%, #C70414 100%);
-            color: white;
+            background: white;
             padding: 60px 20px;
             text-align: center;
+            border: 3px solid var(--primary);
+            box-shadow: 0 8px 24px rgba(217, 4, 22, 0.15);
+            margin: 40px 20px;
+            border-radius: var(--radius);
         }
         
         .founder__badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: var(--primary);
+            color: white;
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 24px;
-            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: var(--shadow-lg);
         }
         
         .founder__counter {
             display: inline-block;
-            background: rgba(0,0,0,0.3);
+            background: white;
             padding: 16px 32px;
             border-radius: var(--radius);
             font-size: 24px;
             font-weight: 700;
             margin: 24px 0;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 3px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            color: var(--accent);
         }
         
         .founder__counter-number {
-            color: #FFD700;
+            color: var(--primary);
             font-size: 36px;
         }
         
@@ -358,11 +364,13 @@
             gap: 12px;
             margin-bottom: 16px;
             padding: 16px;
-            background: rgba(255,255,255,0.1);
+            background: white;
             border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
         }
         
-        .founder__benefit i { font-size: 24px; color: #FFD700; margin-top: 2px; }
+        .founder__benefit i { font-size: 24px; color: var(--primary); margin-top: 2px; }
         
         /* APOIE */
         .support {
@@ -393,6 +401,55 @@
         .support__value i { font-size: 32px; color: var(--primary); margin-bottom: 12px; }
         .support__value h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
         .support__value p { font-size: 14px; color: var(--gray-600); }
+        
+        /* PIX SECTION */
+        .support__pix {
+            background: white;
+            border: 3px solid var(--primary);
+            color: var(--accent);
+            padding: 32px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 32px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .support__pix h3 { font-size: 24px; margin-bottom: 16px; color: var(--primary); }
+        .support__pix p { opacity: 0.85; margin-bottom: 16px; color: var(--gray-900); }
+        
+        .pix-info {
+            background: var(--gray-100);
+            padding: 16px 24px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 400px;
+            border: 2px dashed var(--primary);
+        }
+        
+        .pix-info strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .pix-key {
+            font-size: 18px;
+            font-weight: 700;
+            background: white;
+            color: var(--primary);
+            padding: 12px;
+            border-radius: 6px;
+            word-break: break-all;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--primary);
+        }
+        
+        .pix-key:hover {
+            background: var(--gray-50);
+            transform: scale(1.02);
+        }
         
         /* FOOTER */
         .footer {
@@ -562,8 +619,8 @@
     <!-- CAMPANHA FOUNDER 500 -->
     <section class="founder">
         <div class="founder__badge">🏆 CAMPANHA EXCLUSIVA</div>
-        <h2 class="section__title" style="color: white;">Primeiros 500 Ganham Benefícios por 3 Anos</h2>
-        <p style="font-size: 18px; opacity: 0.9; margin-bottom: 8px;">Seja um dos fundadores do Loomper!</p>
+        <h2 class="section__title" style="color: var(--accent);">Primeiros 500 Ganham Benefícios por 3 Anos</h2>
+        <p style="font-size: 18px; color: var(--gray-600); margin-bottom: 8px;">Seja um dos fundadores do Loomper!</p>
         
         <div class="founder__counter">
             RESTAM: <span class="founder__counter-number" id="vagasRestantes">487</span>/500 VAGAS
@@ -573,38 +630,38 @@
             <div class="founder__benefit">
                 <i class="fas fa-gift"></i>
                 <div>
-                    <strong>Créditos Grátis por 3 Anos</strong><br>
-                    <span style="opacity: 0.9; font-size: 14px;">Receba créditos mensais para usar na plataforma sem pagar nada</span>
+                    <strong style="color: var(--accent);">Créditos Grátis por 3 Anos</strong><br>
+                    <span style="color: var(--gray-600); font-size: 14px;">Receba créditos mensais para usar na plataforma sem pagar nada</span>
                 </div>
             </div>
             <div class="founder__benefit">
                 <i class="fas fa-tag"></i>
                 <div>
-                    <strong>Desconto de 10% Pra Sempre</strong><br>
-                    <span style="opacity: 0.9; font-size: 14px;">Após os 3 anos, você continua pagando menos que todo mundo</span>
+                    <strong style="color: var(--accent);">Desconto de 10% Pra Sempre</strong><br>
+                    <span style="color: var(--gray-600); font-size: 14px;">Após os 3 anos, você continua pagando menos que todo mundo</span>
                 </div>
             </div>
             <div class="founder__benefit">
                 <i class="fas fa-medal"></i>
                 <div>
-                    <strong>Selo "Fundador" no Perfil</strong><br>
-                    <span style="opacity: 0.9; font-size: 14px;">Todo mundo vê que você acreditou no projeto desde o início</span>
+                    <strong style="color: var(--accent);">Selo "Fundador" no Perfil</strong><br>
+                    <span style="color: var(--gray-600); font-size: 14px;">Todo mundo vê que você acreditou no projeto desde o início</span>
                 </div>
             </div>
             <div class="founder__benefit">
                 <i class="fas fa-headset"></i>
                 <div>
-                    <strong>Suporte Prioritário</strong><br>
-                    <span style="opacity: 0.9; font-size: 14px;">Suas dúvidas são respondidas em até 12 horas</span>
+                    <strong style="color: var(--accent);">Suporte Prioritário</strong><br>
+                    <span style="color: var(--gray-600); font-size: 14px;">Suas dúvidas são respondidas em até 12 horas</span>
                 </div>
             </div>
         </div>
         
-        <a href="https://app.loomper.com.br?perfil=founder" class="btn btn--secondary" style="background: white; color: var(--primary); font-size: 18px;">
+        <a href="https://app.loomper.com.br?perfil=founder" class="btn btn--primary" style="font-size: 18px; margin-top: 8px;">
             <i class="fas fa-crown"></i> QUERO SER FUNDADOR
         </a>
         
-        <p style="font-size: 13px; opacity: 0.8; margin-top: 24px;">
+        <p style="font-size: 13px; color: var(--gray-600); margin-top: 24px;">
             * Condição: fazer login pelo menos 1 vez a cada 3 meses
         </p>
     </section>
@@ -642,6 +699,26 @@
         <a href="https://app.loomper.com.br" class="btn btn--primary" style="margin-top: 32px;">
             CADASTRE-SE GRÁTIS E FAÇA PARTE
         </a>
+        
+        <!-- PIX SECTION -->
+        <div class="support__pix">
+            <i class="fas fa-hand-holding-heart" style="font-size: 48px; margin-bottom: 16px;"></i>
+            <h3>💰 Toda Ajuda é Bem-Vinda!</h3>
+            <p>
+                Somos uma startup que está começando. Se você acredita no projeto e quer ajudar a manter a plataforma no ar, qualquer contribuição faz diferença!
+            </p>
+            
+            <div class="pix-info">
+                <strong>Chave PIX (Email):</strong>
+                <div class="pix-key" onclick="copyPix()" title="Clique para copiar">
+                    contato@loomper.com.br
+                </div>
+            </div>
+            
+            <p style="font-size: 14px; opacity: 0.9;">
+                Qualquer valor ajuda no desenvolvimento de novas funcionalidades e suporte aos usuários! ❤️
+            </p>
+        </div>
     </section>
     
     <!-- FOOTER -->
@@ -811,6 +888,16 @@
         }
         
         atualizarContador();
+        
+        // COPIAR PIX
+        function copyPix() {
+            const pixKey = 'contato@loomper.com.br';
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert('✅ Chave PIX copiada!\n\n' + pixKey);
+            }).catch(err => {
+                prompt('Chave PIX:', pixKey);
+            });
+        }
     </script>
 </body>
 </html>
