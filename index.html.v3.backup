@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>LOOMPER | Conexão. Segurança. Dignidade.</title>
+    <meta name="description" content="O Primeiro Ecossistema de Logística Automotiva.">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="assets/images/FAVICON_Loomper.png">
+
+    <!-- Fonts & Icons (Inter - Branding Oficial) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- CSS V3.0 PROFISSIONAL -->
+    <link rel="stylesheet" href="css/loomper-v3-professional.css">
+    
+    <!-- CORREÇÕES CRÍTICAS: Botão visível + Ícones visíveis + Fundo claro -->
+    <link rel="stylesheet" href="css/critical-fixes.css">
+</head>
+<body>
+
+    <!-- ========================================
+         1️⃣ HERO SECTION (GRADIENTE OFICIAL)
+         ======================================== -->
+    <section id="hero" class="hero-section">
+        <!-- LOGO OFICIAL -->
+        <div class="brand-logo">
+            <img src="assets/images/logotipo.PNG" alt="Loomper - Logotipo Oficial">
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    LOOMPER
+                    <span class="hero-subtitle-main">Conectamos motoristas cegonheiros com chapas experientes.</span>
+                </h1>
+                
+                <p class="hero-desc">
+                    Sem Improviso. Sem surpresa. Com agilidade e respeito.<br>
+                    <span class="highlight-text">Motoristas CEGONHEIROS, ajudantes e transportadoras operando com mais segurança, organização e dignidade.</span>
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="cta-button cta-primary" onclick="scrollToSection('perfis')">
+                        Começar agora
+                    </button>
+                    <button class="cta-button cta-secondary" onclick="window.location.href='https://app.loomper.com.br'">
+                        <i class="fas fa-desktop"></i> Testar versão Web
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         2️⃣ PERFIS (CARDS COM BACKGROUNDS OFICIAIS)
+         ======================================== -->
+    <section id="perfis" class="profiles-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Onde você se encaixa?</h2>
+                <p>Escolha seu perfil e seja um pioneiro</p>
+            </div>
+
+            <div class="profiles-grid">
+
+                <!-- Card Motorista -->
+                <div class="profile-card motorista" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Sou Motorista Cegonheiro</h3>
+                    <p>
+                        Menos improviso na descarga.  
+                        Mais segurança, apoio e previsibilidade.
+                    </p>
+                    <div class="card-cta">
+                        Sou Motorista <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card Ajudante / Chapa -->
+                <div class="profile-card chapa" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Sou Ajudante / Chapa</h3>
+                    <p>
+                        Mais oportunidades.  
+                        Mais respeito pelo seu trabalho.  
+                        Chega de depender da sorte.
+                    </p>
+                    <div class="card-cta">
+                        Sou Ajudante <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card Transportadora -->
+                <div class="profile-card transportadora" onclick="window.location.href='https://app.loomper.com.br'">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Sou Transportadora</h3>
+                    <p>
+                        Menos atraso, menos risco.  
+                        Mais controle e organização na operação urbana.
+                    </p>
+                    <div class="card-cta">
+                        Sou Transportadora <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Card Auxiliar (Construção) -->
+            <div class="card-auxiliary" onclick="openTimelineModal()">
+                <div class="aux-content">
+                    <h4>
+                        <i class="fas fa-hard-hat"></i>
+                        Projeto em Construção
+                    </h4>
+                    <p>Clique para ver a Linha do Tempo (2025 – 2026)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<!-- ========================================
+     🚀 SEÇÃO COMO FUNCIONA (3 PASSOS VISUAIS)
+     ======================================== -->
+<section id="como-funciona" class="how-it-works-section">
+    <div class="container">
+        
+        <div class="section-header">
+            <h2>Como Funciona o Loomper</h2>
+            <p>3 passos simples para transformar sua operação</p>
+        </div>
+
+        <div class="steps-flow">
+            
+            <!-- PASSO 1 -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>1</span>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>Cadastre-se</h3>
+                <p>
+                    Crie sua conta gratuita em menos de 2 minutos.
+                    Validamos seu perfil para garantir segurança e qualidade.
+                </p>
+                <div class="step-details">
+                    <span class="detail-item"><i class="fas fa-check"></i> Rápido e simples</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> Verificação de identidade</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> 100% gratuito</span>
+                </div>
+            </div>
+
+            <!-- SETA 1 -->
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <!-- PASSO 2 -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>2</span>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Conecte-se</h3>
+                <p>
+                    Motoristas encontram chapas qualificados por localização.
+                    Chapas recebem oportunidades reais de trabalho.
+                </p>
+                <div class="step-details">
+                    <span class="detail-item"><i class="fas fa-check"></i> Match inteligente</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> Avaliações reais</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> Comunicação direta</span>
+                </div>
+            </div>
+
+            <!-- SETA 2 -->
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <!-- PASSO 3 -->
+            <div class="step-card">
+                <div class="step-number">
+                    <span>3</span>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Opere</h3>
+                <p>
+                    Realize o serviço com segurança e organize.
+                    Avalie a experiência e construa sua reputação.
+                </p>
+                <div class="step-details">
+                    <span class="detail-item"><i class="fas fa-check"></i> Sem improviso</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> Pagamento seguro</span>
+                    <span class="detail-item"><i class="fas fa-check"></i> Histórico completo</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="section-cta">
+            <button class="cta-button cta-primary-large" onclick="window.location.href='https://app.loomper.com.br'">
+                <i class="fas fa-rocket"></i> Começar Agora - É Grátis!
+            </button>
+        </div>
+
+    </div>
+</section>
+<!-- ============================================
+     🏆 SEÇÃO FOUNDER 500 V10 (CLEAN & LIGHT)
+     ============================================ -->
+<!-- SEÇÃO: POR QUE O LOOMPER EXISTE? -->
+<section id="pain-points" class="pain-points-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Por que o Loomper existe?</h2>
+            <p>Resolvendo os maiores problemas do setor de cegonhas</p>
+        </div>
+
+        <div class="pain-cards-grid">
+            
+            <!-- CARD 1: Motorista -->
+            <div class="pain-card" data-actor="motorista">
+                <div class="pain-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Motorista</h3>
+                <p class="pain-text">Cansado de ficar esperando chapa? Perder tempo procurando ajudante qualificado?</p>
+                <button class="pain-cta" onclick="openPainModal('motorista')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- CARD 2: Chapa -->
+            <div class="pain-card" data-actor="chapa">
+                <div class="pain-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>Chapa/Ajudante</h3>
+                <p class="pain-text">Chega de ficar na rua esperando serviço! Dignidade e previsibilidade para você.</p>
+                <button class="pain-cta" onclick="openPainModal('chapa')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- CARD 3: Transportadora -->
+            <div class="pain-card" data-actor="transportadora">
+                <div class="pain-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Transportadora</h3>
+                <p class="pain-text">Reduzir custos operacionais e garantir mão de obra qualificada? Temos a solução!</p>
+                <button class="pain-cta" onclick="openPainModal('transportadora')">
+                    Ver solução <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MODAL: Soluções Loomper -->
+<div id="pain-modal-motorista" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('motorista')">&times;</span>
+        <h2><i class="fas fa-user-tie"></i> Motorista</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Perder tempo procurando chapa</li>
+                <li>❌ Não saber se o ajudante é qualificado</li>
+                <li>❌ Riscos de danos aos veículos</li>
+                <li>❌ Preços abusivos de última hora</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Encontre chapas verificados em segundos</li>
+                <li>✅ Avaliações e histórico completo</li>
+                <li>✅ Preços transparentes e justos</li>
+                <li>✅ Pagamento digital seguro</li>
+            </ul>
+            <a href="https://app.loomper.com.br" class="pain-modal-cta">
+                Cadastre-se agora <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="pain-modal-chapa" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('chapa')">&times;</span>
+        <h2><i class="fas fa-hard-hat"></i> Chapa/Ajudante</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Ficar na rua esperando serviço</li>
+                <li>❌ Renda imprevisível</li>
+                <li>❌ Sem benefícios ou garantias</li>
+                <li>❌ Falta de reconhecimento profissional</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Receba oportunidades no celular</li>
+                <li>✅ Construa seu histórico profissional</li>
+                <li>✅ Escolha seus horários e regiões</li>
+                <li>✅ Ganhe avaliações e destaque</li>
+            </ul>
+            <a href="https://app.loomper.com.br" class="pain-modal-cta">
+                Cadastre-se agora <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="pain-modal-transportadora" class="pain-modal">
+    <div class="pain-modal-content">
+        <span class="pain-modal-close" onclick="closePainModal('transportadora')">&times;</span>
+        <h2><i class="fas fa-building"></i> Transportadora</h2>
+        <div class="pain-solution">
+            <h3>Seu Problema:</h3>
+            <ul class="pain-problem-list">
+                <li>❌ Custos operacionais altos</li>
+                <li>❌ Falta de mão de obra qualificada</li>
+                <li>❌ Atrasos e prejuízos</li>
+                <li>❌ Gestão manual e ineficiente</li>
+            </ul>
+            <h3>Com o Loomper:</h3>
+            <ul class="pain-solution-list">
+                <li>✅ Rede de chapas verificados</li>
+                <li>✅ Dashboard de gestão completo</li>
+                <li>✅ Redução de até 40% dos custos</li>
+                <li>✅ Planos corporativos personalizados</li>
+            </ul>
+            <a href="mailto:contato@loomper.com.br?subject=Interesse em Plano Corporativo Loomper" class="pain-modal-cta">
+                Solicitar proposta <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT: Pain Modals -->
+<script>
+function openPainModal(actor) {
+    document.getElementById('pain-modal-' + actor).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePainModal(actor) {
+    document.getElementById('pain-modal-' + actor).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Fechar modal ao clicar fora
+window.onclick = function(event) {
+    if (event.target.classList.contains('pain-modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+</script>
+
+<section id="founder-500" class="founder-section-v10">
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="founder-header-v10">
+      <div class="founder-badge-v10">
+        <i class="fas fa-crown"></i>
+        OFERTA EXCLUSIVA
+      </div>
+      <h2 class="founder-title-v10">Campanha Founder 500</h2>
+      <p class="founder-subtitle-v10">
+        Apenas <strong>500 vagas</strong> para os primeiros fundadores com benefícios exclusivos durante o primeiro ano.
+      </p>
+    </div>
+
+    <!-- Contador Destacado -->
+    <div class="founder-counter-v10">
+      <div class="counter-card">
+        <div class="counter-main">
+          <span id="founder-counter" class="counter-number">487</span>
+          <span class="counter-label">VAGAS RESTANTES</span>
+        </div>
+        <div class="counter-progress">
+          <div class="progress-bar-v10">
+            <div id="founder-progress-bar" class="progress-fill-v10" style="width: 2.6%;"></div>
+          </div>
+          <span class="progress-text-v10">
+            <strong id="founder-current-count">13</strong> de 500 vagas preenchidas
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Benefícios Resumidos -->
+    <div class="benefits-grid-v10">
+      
+      <!-- Benefício 1 -->
+      <div class="benefit-card-v10">
+        <div class="benefit-icon-v10">
+          <i class="fas fa-crown"></i>
+        </div>
+        <h3>Badge Fundador Exclusivo</h3>
+        <p>Reconhecimento eterno como um dos 500 pioneiros</p>
+      </div>
+
+      <!-- Benefício 2 -->
+      <div class="benefit-card-v10">
+        <div class="benefit-icon-v10">
+          <i class="fas fa-gift"></i>
+        </div>
+        <h3>Créditos Mensais com Vesting</h3>
+        <p><strong>Ano 1:</strong> 500 cr/mês | <strong>Ano 2:</strong> 250 cr/mês | <strong>Ano 3:</strong> 100 cr/mês</p>
+      </div>
+
+      <!-- Benefício 3 -->
+      <div class="benefit-card-v10">
+        <div class="benefit-icon-v10">
+          <i class="fas fa-percent"></i>
+        </div>
+        <h3>Descontos Progressivos</h3>
+        <p><strong>Ano 1:</strong> 20% | <strong>Ano 2:</strong> 15% | <strong>Ano 3:</strong> 10% | <strong>Pós-vesting:</strong> 10% vitalício</p>
+      </div>
+
+    </div>
+
+    <!-- CTAs -->
+    <div class="founder-cta-v10">
+      <button class="cta-founder-v10" onclick="window.location.href='https://app.loomper.com.br?perfil=founder'">
+        <i class="fas fa-rocket"></i> GARANTIR MINHA VAGA DE FUNDADOR
+      </button>
+      <button class="cta-secondary-v10" onclick="openFounderModal()">
+        <i class="fas fa-info-circle"></i> Saiba Mais
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     MODAL FOUNDER DETAILS (SAIBA MAIS)
+     ============================================ -->
+<div id="modal-founder-details" class="modal-founder-details">
+  <div class="modal-founder-content">
+    
+    <!-- Botão Fechar -->
+    <button class="modal-close-btn" onclick="closeFounderModal()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Header Modal -->
+    <div class="modal-founder-header">
+      <div class="modal-badge">
+        <i class="fas fa-crown"></i>
+        CAMPANHA FOUNDER 500
+      </div>
+      <h2>Benefícios Exclusivos para Fundadores</h2>
+      <p>Conheça todos os detalhes da nossa oferta mais exclusiva</p>
+    </div>
+
+    <!-- Body Modal -->
+    <div class="modal-founder-body">
+      
+      <!-- Benefício 1 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Badge Fundador Exclusivo</h3>
+          <div class="benefit-value">🏆 EXCLUSIVO E ÚNICO</div>
+          <p>
+            Você será reconhecido eternamente como um dos <strong>500 primeiros fundadores</strong> da plataforma. 
+            Seu perfil terá um badge especial que nunca mais estará disponível.
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-infinity"></i> VITALÍCIO
+          </span>
+        </div>
+      </div>
+
+      <!-- Benefício 2 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-gift"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Créditos Mensais com Vesting (36 Meses)</h3>
+          <div class="benefit-value"><i class="fas fa-chart-line" style="color: #10B981;"></i> VESTING PROGRESSIVO</div>
+          <p>
+            <strong>Ano 1 (meses 1-12):</strong> 500 créditos/mês (R$ 60/mês)<br>
+            <strong>Ano 2 (meses 13-24):</strong> 250 créditos/mês (R$ 30/mês)<br>
+            <strong>Ano 3 (meses 25-36):</strong> 100 créditos/mês (R$ 12/mês)<br>
+            <strong>Total 36 meses:</strong> 10.200 créditos = <strong>R$ 1.224,00</strong>
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-sync-alt"></i> RENOVAÇÃO AUTOMÁTICA MENSAL
+          </span>
+          <p class="benefit-note">
+            * Créditos renovam mensalmente. Condição: login mínimo 1x a cada 90 dias.<br>
+            ** Após 36 meses: Badge Fundador permanece + desconto 10% vitalício.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefício 3 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-percent"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Descontos Progressivos com Vesting</h3>
+          <div class="benefit-value"><i class="fas fa-chart-line" style="color: #D90416;"></i> VESTING 36 MESES</div>
+          <p>
+            <strong>Ano 1:</strong> Multiplier 1.5x (equivalente a ~33% desconto)<br>
+            <strong>Ano 2:</strong> Multiplier 1.3x (equivalente a ~23% desconto)<br>
+            <strong>Ano 3:</strong> Multiplier 1.15x (equivalente a ~13% desconto)<br>
+            <strong>Pós-vesting (vitalício):</strong> 10% de desconto permanente
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-tags"></i> TODAS AS COMPRAS
+          </span>
+          <p class="benefit-note">
+            * Multipliers aplicados automaticamente na compra de pacotes.<br>
+            ** Exemplo: Comprar Professional (1.000 cr): Ano 1 recebe 1.500 cr (500 cr bônus).
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefício 4 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Bônus de Indicação Multinível</h3>
+          <div class="benefit-value">🚀 +500 CR (NÍVEL 1) + CASHBACK RECORRENTE</div>
+          <p>
+            <strong>Bônus One-Time (Indicação Direta):</strong><br>
+            - Você: +500 créditos (quando indicado comprar R$ 50+)<br>
+            - Indicado: +300 créditos no cadastro + 20% OFF primeira compra<br><br>
+            <strong>Cashback Recorrente (12 meses):</strong><br>
+            - Nível 1: 10% das compras do indicado (cap R$ 200/mês)<br>
+            - Nível 2: 5% das compras de indicados indiretos (cap R$ 50/mês)
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-infinity"></i> INDICAÇÕES ILIMITADAS
+          </span>
+          <p class="benefit-note">
+            * Cashback válido por 12 meses. Cap lifetime: R$ 5.000 (Nível 1) + R$ 1.000 (Nível 2).<br>
+            ** Regular: +500 cr (Nível 1) sem cashback recorrente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefício 5 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Voz Ativa no Desenvolvimento</h3>
+          <div class="benefit-value">🎯 INFLUENCIE O FUTURO</div>
+          <p>
+            Participe de <strong>pesquisas exclusivas</strong>, vote em novas funcionalidades 
+            e tenha acesso direto à equipe de desenvolvimento. Sua opinião molda o Loomper!
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-comments"></i> COMUNIDADE VIP
+          </span>
+        </div>
+      </div>
+
+      <!-- Benefício 6 -->
+      <div class="modal-benefit-item">
+        <div class="modal-benefit-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <div class="modal-benefit-content">
+          <h3>Acesso Antecipado</h3>
+          <div class="benefit-value">⚡ SEMPRE EM PRIMEIRA MÃO</div>
+          <p>
+            Teste novas funcionalidades <strong>antes de todo mundo</strong>. 
+            Fundadores têm acesso prioritário a todos os lançamentos e atualizações.
+          </p>
+          <span class="benefit-tag-modal">
+            <i class="fas fa-star"></i> BETA TESTER VIP
+          </span>
+        </div>
+      </div>
+
+      <!-- Comparação -->
+      <div class="modal-comparison">
+        <h3>📊 Comparação de Benefícios</h3>
+        <table class="comparison-table-modal">
+          <thead>
+            <tr>
+              <th>Benefício</th>
+              <th>Founder</th>
+              <th>Pioneer</th>
+              <th>Early Adopter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature">Badge Exclusivo</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <td class="feature">Créditos Mensais</td>
+              <td><strong>1.500</strong></td>
+              <td><strong>750</strong></td>
+              <td><strong>300</strong></td>
+            </tr>
+            <tr>
+              <td class="feature">Desconto Exclusivo</td>
+              <td><strong>20%</strong></td>
+              <td><strong>15%</strong></td>
+              <td><strong>10%</strong></td>
+            </tr>
+            <tr>
+              <td class="feature">Bônus Indicação</td>
+              <td><strong>+200 cr</strong></td>
+              <td><strong>+150 cr</strong></td>
+              <td><strong>+100 cr</strong></td>
+            </tr>
+            <tr>
+              <td class="feature">Limite MLM Mensal</td>
+              <td><i class="fas fa-infinity"></i></td>
+              <td><strong>50.000 cr</strong></td>
+              <td><strong>20.000 cr</strong></td>
+            </tr>
+            <tr>
+              <td class="feature">Voz Ativa Dev.</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-times"></i></td>
+            </tr>
+            <tr>
+              <td class="feature">Acesso Antecipado</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-times"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- Footer Modal -->
+    <div class="modal-founder-footer">
+      <button class="cta-founder-v10" onclick="window.location.href='https://app.loomper.com.br?perfil=founder'">
+        <i class="fas fa-rocket"></i> QUERO SER FUNDADOR AGORA
+      </button>
+      <p style="margin-top: 16px; font-size: 0.9rem; color: var(--ink-black-light);">
+        ⏱️ Apenas <strong id="modal-counter">487 vagas</strong> restantes
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- JavaScript do Modal -->
+<script>
+function openFounderModal() {
+  const modal = document.getElementById('modal-founder-details');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  
+  // Atualizar contador no modal
+  const mainCounter = document.getElementById('founder-counter').textContent;
+  document.getElementById('modal-counter').textContent = mainCounter + ' vagas';
+}
+
+function closeFounderModal() {
+  const modal = document.getElementById('modal-founder-details');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Fechar ao clicar fora do conteúdo
+document.getElementById('modal-founder-details')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeFounderModal();
+  }
+});
+
+// Fechar com ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeFounderModal();
+  }
+});
+</script>
+
+<!-- SCRIPT: Contador Dinâmico Founder 500 - ATUALIZADO v2.0 -->
+<script>
+async function updateFounderCounter() {
+    try {
+        console.log('🔄 Atualizando contador Founder 500...');
+        
+        // Buscar dados da campanha do Firebase (em tempo real)
+        const campaignData = await window.LoomperFirebase.getCampaignData();
+        
+        if (!campaignData) {
+            console.warn('⚠️ Dados da campanha não disponíveis - mantendo valores padrão');
+            return;
+        }
+        
+        const totalSignups = campaignData.stats.totalSignups || 0;
+        const founderSlots = 500;
+        const remainingSlots = Math.max(0, founderSlots - totalSignups);
+        const progressPercent = Math.min(100, (totalSignups / founderSlots) * 100);
+        
+        console.log(`📊 Stats: ${totalSignups} cadastros | ${remainingSlots} vagas restantes | ${progressPercent.toFixed(1)}%`);
+        
+        // Atualizar contador principal (vagas restantes)
+        const counterElement = document.getElementById('founder-counter');
+        if (counterElement) {
+            counterElement.textContent = remainingSlots;
+            
+            // Adicionar classe de urgência se restar menos de 100 vagas
+            if (remainingSlots < 100) {
+                counterElement.parentElement.classList.add('urgent');
+            }
+        }
+        
+        // Atualizar contador atual (vagas preenchidas)
+        const currentCountElement = document.getElementById('founder-current-count');
+        if (currentCountElement) {
+            currentCountElement.textContent = totalSignups;
+        }
+        
+        // Atualizar barra de progresso
+        const progressBarElement = document.getElementById('founder-progress-bar');
+        if (progressBarElement) {
+            progressBarElement.style.width = progressPercent + '%';
+        }
+        
+        console.log(`✅ Contador atualizado com sucesso!`);
+        console.log(`   Vagas restantes: ${remainingSlots}`);
+        console.log(`   Vagas preenchidas: ${totalSignups}`);
+        console.log(`   Progresso: ${progressPercent.toFixed(1)}%`);
+        
+    } catch (error) {
+        console.error('❌ Erro ao atualizar contador:', error);
+        console.error('   Stack trace:', error.stack);
+    }
+}
+
+// Atualizar contador ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('📱 Landing Page carregada - iniciando atualização de contador');
+    
+    // Aguardar Firebase estar pronto
+    setTimeout(() => {
+        updateFounderCounter();
+    }, 1000);
+});
+
+// Atualizar a cada 30 segundos (para refletir novos cadastros em tempo real)
+setInterval(updateFounderCounter, 30000);
+
+console.log('🎯 Script de contador Founder 500 v2.0 carregado');
+</script>
+<!-- ========================================
+     ❓ SEÇÃO FAQ (PERGUNTAS FREQUENTES INLINE)
+     ======================================== -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        
+        <div class="section-header">
+            <h2>Perguntas Frequentes</h2>
+            <p>Tire suas dúvidas sobre o Loomper</p>
+        </div>
+
+        <!-- BUSCA NO FAQ -->
+        <div class="faq-search-box">
+            <i class="fas fa-search"></i>
+            <input 
+                type="text" 
+                id="faq-search-input" 
+                class="faq-search-input" 
+                placeholder="Buscar pergunta..."
+                autocomplete="off"
+            >
+        </div>
+
+        <!-- FAQ ACCORDION -->
+        <div class="faq-accordion">
+            
+            <!-- CATEGORIA 1: Geral -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-info-circle" style="color: #D90416;"></i></span>
+                    <span class="category-title">Perguntas Gerais</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>O que é o Loomper?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O Loomper é uma plataforma digital que conecta profissionais autônomos qualificados (chapas/ajudantes) com motoristas cegonheiros e empresas transportadoras que necessitam de serviços especializados para descarga de veículos.</p>
+                            <div class="faq-highlight">
+                                <strong>Missão:</strong> Trazer dignidade, segurança e previsibilidade para o setor de cegonhas, eliminando o improviso e criando um ecossistema profissional e organizado.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>O Loomper já está funcionando?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O Loomper está em fase de <strong>BETA FECHADO</strong> com a Campanha Pioneiros (Founders, Pioneers e Early Adopters).</p>
+                            <div class="faq-warning">
+                                <strong>Status Atual:</strong> Estamos construindo a plataforma junto com os primeiros 7.000 usuários para garantir que o produto atenda perfeitamente às necessidades reais do mercado.
+                            </div>
+                            <p>Lançamento oficial previsto para: <strong>2025</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quanto custa usar o Loomper?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O Loomper funciona com um sistema de <strong>créditos</strong>:</p>
+                            <ul>
+                                <li><strong>Para Motoristas:</strong> Pagam créditos para acessar chapas qualificados (250 créditos/serviço ≈ R$ 30)</li>
+                                <li><strong>Para Chapas:</strong> Recebem oportunidades sem custo (tudo gratuito!)</li>
+                                <li><strong>Para Transportadoras:</strong> Planos corporativos com valores especiais</li>
+                            </ul>
+                            <div class="faq-info">
+                                <strong>Pioneiros:</strong> Os Fundadores recebem créditos mensais com <strong>vesting 36 meses</strong> + multipliers progressivos!<br>
+                                <small>*Ano 1: 500 cr/mês | Ano 2: 250 cr/mês | Ano 3: 100 cr/mês (condição: login 1x a cada 90 dias)</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 2: Campanha Founder 500 -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-rocket" style="color: #D90416;"></i></span>
+                    <span class="category-title">Campanha Founder 500</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quais os benefícios de ser Fundador?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>🥇 TIER OURO - FUNDADORES (500 primeiros):</strong></p>
+                            <ul>
+                                <li><strong>💰 Créditos Mensais (Vesting 36 Meses):</strong></li>
+                                <li>   - Ano 1 (meses 1-12): 500 cr/mês (R$ 60/mês)</li>
+                                <li>   - Ano 2 (meses 13-24): 250 cr/mês (R$ 30/mês)</li>
+                                <li>   - Ano 3 (meses 25-36): 100 cr/mês (R$ 12/mês)</li>
+                                <li>   - <strong>Total 36 meses: 10.200 cr = R$ 1.224,00</strong></li>
+                                <li><strong>🏆 Badge Fundador (Vitalício):</strong></li>
+                                <li>   - Reconhecimento permanente como um dos 500 primeiros</li>
+                                <li>   - Nunca mais estará disponível</li>
+                                <li><strong>💸 Multipliers em Compras (Vesting 36 Meses):</strong></li>
+                                <li>   - Ano 1: 1.5x (equivalente a ~33% desconto)</li>
+                                <li>   - Ano 2: 1.3x (equivalente a ~23% desconto)</li>
+                                <li>   - Ano 3: 1.15x (equivalente a ~13% desconto)</li>
+                                <li>   - <strong>Pós-vesting: 10% desconto vitalício</strong></li>
+                                <li><strong>👥 Bônus Indicação Multinível:</strong></li>
+                                <li>   - Bônus one-time: +500 cr (Nível 1) + +300 cr para indicado</li>
+                                <li>   - Cashback recorrente: 10% N1 + 5% N2 (12 meses)</li>
+                                <li>   - Cap mensal: R$ 200 (N1) + R$ 50 (N2)</li>
+                                <li><strong>🎯 Benefícios Exclusivos (Vitalícios):</strong></li>
+                                <li>   - Voz ativa no desenvolvimento (Comunidade VIP)</li>
+                                <li>   - Acesso antecipado a features (Beta Tester)</li>
+                                <li>   - Suporte prioritário (SLA 12h úteis)</li>
+                            </ul>
+                            <div class="faq-highlight">
+                                <strong>Benefícios Totais (36 meses):</strong> R$ 15.000 (cap) incluindo créditos, multipliers e cashback.<br>
+                                <strong>Pós-vesting:</strong> Badge Fundador + 10% desconto vitalício + benefícios exclusivos mantidos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Como me cadastrar como Fundador?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Siga estes passos:</p>
+                            <ol>
+                                <li>Clique em <strong>"Garantir Minha Vaga de Fundador"</strong></li>
+                                <li>Preencha o cadastro completo no app</li>
+                                <li>Aguarde aprovação (análise de 1-3 dias úteis)</li>
+                                <li>Receba seu badge Founder exclusivo</li>
+                                <li>Comece a usar quando o Loomper lançar!</li>
+                            </ol>
+                            <div class="faq-warning">
+                                <strong>Importante:</strong> As vagas são preenchidas por <strong>ordem de cadastro aprovado</strong>. Garanta a sua o quanto antes!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Os créditos mensais expiram?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>SIM</strong>, os créditos de campanha expiram no dia 1º de cada mês às 00:00 (Horário de Brasília).</p>
+                            <div class="faq-info">
+                                <strong>Renovação Automática:</strong> No dia 1º de cada mês, você recebe <strong>1.500 créditos novos</strong>, desde que tenha usado a plataforma pelo menos <strong>1 vez no mês anterior</strong>.
+                            </div>
+                            <p><strong>Exemplo:</strong></p>
+                            <ul>
+                                <li>01/02: Recebe 1.500 créditos</li>
+                                <li>15/02: Usa 800 créditos (sobram 700)</li>
+                                <li>01/03: Os 700 expiram, mas você recebe 1.500 novos!</li>
+                            </ul>
+                            <div class="faq-warning">
+                                <strong>Atenção:</strong> Se você NÃO usar a plataforma em um mês, a renovação é pausada naquele mês. Volte a usar e a renovação retorna!
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 3: Sistema de Créditos -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-credit-card" style="color: #D90416;"></i></span>
+                    <span class="category-title">Sistema de Créditos</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quais são os pacotes de créditos disponíveis?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-info">
+                                <strong>PACOTE STARTER</strong><br>
+                                250 créditos por R$ 49,90<br>
+                                Ideal para: Testes iniciais
+                            </div>
+                            <div class="faq-info">
+                                <strong>PACOTE PROFESSIONAL</strong><br>
+                                1.050 créditos por R$ 179,90 (+50 bônus)<br>
+                                Ideal para: Uso regular<br>
+                                <strong>MAIS POPULAR!</strong>
+                            </div>
+                            <div class="faq-info">
+                                <strong>PACOTE CORPORATE</strong><br>
+                                3.300 créditos por R$ 479,90 (+300 bônus)<br>
+                                Ideal para: Uso intensivo<br>
+                                <strong>MELHOR CUSTO-BENEFÍCIO!</strong>
+                            </div>
+                            <p><strong>+ Desconto Pioneer:</strong></p>
+                            <ul>
+                                <li>🥇 Founders: <strong>20% OFF</strong> em todas as compras</li>
+                                <li>🥈 Pioneers: 15% OFF</li>
+                                <li>🥉 Early Adopters: 10% OFF</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Posso transferir ou vender meus créditos?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-warning">
+                                <strong>NÃO!</strong> Os créditos são de uso pessoal e intransferível. Qualquer tentativa de venda, troca ou transferência resultará no banimento da plataforma sem reembolso.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 4: Programa MLM -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-gift" style="color: #D90416;"></i></span>
+                    <span class="category-title">Programa de Indicações (MLM)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Como funciona o Programa MLM?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O Programa de Indicações permite que você ganhe bônus em créditos ao indicar novos usuários, em até <strong>3 níveis de profundidade</strong>.</p>
+                            <p><strong>Bônus Imediato:</strong></p>
+                            <ul>
+                                <li>+100 créditos quando seu indicado faz a primeira compra (Fundadores: +200)</li>
+                                <li>Válido por 30 dias</li>
+                            </ul>
+                            <p><strong>Bônus Recorrente:</strong></p>
+                            <ul>
+                                <li>Nível 1 (direto): 5% em créditos de cada compra</li>
+                                <li>Nível 2 (indireto): 3%</li>
+                                <li>Nível 3: 2%</li>
+                            </ul>
+                            <div class="faq-highlight">
+                                <strong>Exemplo:</strong> Se você indica 10 pessoas que compram o Professional (R$ 179,90) por mês, você ganha <strong>≈899 créditos/mês RECORRENTES</strong>!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>O Loomper é esquema de pirâmide?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-highlight">
+                                <strong>NÃO!</strong> O Programa MLM Loomper NÃO é esquema pirâmide porque:
+                                <ul>
+                                    <li>✅ Há um produto/serviço real (créditos para oportunidades)</li>
+                                    <li>✅ Não há obrigatoriedade de recrutar</li>
+                                    <li>✅ Não há taxas de adesão</li>
+                                    <li>✅ Os ganhos vêm de consumo real</li>
+                                    <li>✅ 100% transparente e legal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 5: Segurança -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-lock" style="color: #D90416;"></i></span>
+                    <span class="category-title">Segurança e Privacidade</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Meus dados estão seguros?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-highlight">
+                                <strong>SIM!</strong> A segurança dos seus dados é nossa prioridade máxima.
+                            </div>
+                            <p>Medidas de segurança:</p>
+                            <ul>
+                                <li>✅ Criptografia em trânsito (HTTPS/TLS) e em repouso</li>
+                                <li>✅ Autenticação segura via Firebase</li>
+                                <li>✅ Firewall e monitoramento 24/7</li>
+                                <li>✅ Backups regulares</li>
+                                <li>✅ Conformidade total com a LGPD</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Vocês vendem meus dados?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-warning">
+                                <strong>NUNCA!</strong> A Loomper NÃO vende, aluga ou comercializa seus dados pessoais.
+                            </div>
+                            <p>Compartilhamos dados apenas:</p>
+                            <ul>
+                                <li>Com motoristas/chapas (dados necessários para o match)</li>
+                                <li>Com processadores de pagamento</li>
+                                <li>Com autoridades (quando exigido por lei)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 6: Programa de Indicações -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-gift" style="color: #D90416;"></i></span>
+                    <span class="category-title">Programa de Indicações</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Como funciona o Programa de Indicações?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Indique amigos e ganhe <strong>300 créditos de bônus</strong> para cada indicação qualificada!</p>
+                            <div class="faq-info">
+                                <strong>Regra Simples:</strong> Seus créditos de bônus são liberados APÓS o indicado realizar a primeira compra (mínimo R$ 49,90).
+                            </div>
+                            <p><strong>Passo a passo:</strong></p>
+                            <ol>
+                                <li>Você indica um amigo (compartilha seu código)</li>
+                                <li>Amigo se cadastra usando seu código</li>
+                                <li>Amigo realiza a primeira compra (R$ 49,90+)</li>
+                                <li>Pagamento é confirmado pelo Mercado Pago</li>
+                                <li>Em até 24h: Vocês DOIS ganham 300 créditos cada!</li>
+                            </ol>
+                            <div class="faq-warning">
+                                <strong>Atenção:</strong> Indicações expiram em 30 dias sem compra. Créditos não são liberados para indicações inativas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Quanto ganho por indicação?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Você:</strong> 300 créditos<br>
+                            <strong>Seu amigo:</strong> 300 créditos</p>
+                            <div class="faq-highlight">
+                                <strong>Total:</strong> 600 créditos distribuídos por indicação qualificada!
+                            </div>
+                            <p><strong>Exemplo:</strong> Se você indicar 10 amigos e todos comprarem:</p>
+                            <ul>
+                                <li>Você ganha: 10 × 300 = <strong>3.000 créditos</strong> (≈ R$ 360)</li>
+                                <li>Indicações ilimitadas! Sem limite de ganhos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Por que preciso esperar meu amigo comprar?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Para garantir um programa justo e sustentável!</p>
+                            <div class="faq-info">
+                                <strong>Sistema Anti-Fraude v2.0:</strong> Liberamos créditos apenas para indicações reais. Isso evita:
+                                <ul>
+                                    <li>❌ Contas falsas</li>
+                                    <li>❌ Cadastros fantasmas</li>
+                                    <li>❌ Abuso do sistema</li>
+                                </ul>
+                            </div>
+                            <p><strong>Benefícios:</strong></p>
+                            <ul>
+                                <li>✅ Programa sustentável a longo prazo</li>
+                                <li>✅ Créditos com valor real</li>
+                                <li>✅ Recompensa justa para indicadores sérios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORIA 7: Suporte -->
+            <div class="faq-category">
+                <button class="faq-category-btn" onclick="toggleFaqCategory(this)">
+                    <span class="category-icon"><i class="fas fa-comments" style="color: #D90416;"></i></span>
+                    <span class="category-title">Suporte e Contato</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-category-content">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaqAnswer(this)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Como entrar em contato com o suporte?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Temos vários canais de atendimento:</p>
+                            <ul>
+                                <li><i class="fas fa-envelope" style="color: #D90416;"></i> <strong>E-mail Geral:</strong> contato@loomper.com.br</li>
+                                <li><i class="fas fa-tools" style="color: #D90416;"></i> <strong>Suporte Técnico:</strong> suporte@loomper.com.br</li>
+                                <li><i class="fas fa-shield-alt" style="color: #D90416;"></i> <strong>Privacidade/LGPD:</strong> privacidade@loomper.com.br</li>
+                                <li><i class="fas fa-chart-line" style="color: #D90416;"></i> <strong>MLM:</strong> mlm@loomper.com.br</li>
+                                <li><i class="fab fa-whatsapp" style="color: #25D366;"></i> <strong>WhatsApp:</strong> (11) 96585-8142</li>
+                            </ul>
+                            <p><strong>Prazo de resposta:</strong> Até 3 dias úteis</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="faq-cta">
+            <h3>Ainda tem dúvidas?</h3>
+            <p>Entre em contato conosco! Teremos prazer em ajudar.</p>
+            <div class="faq-cta-buttons">
+                <a href="https://wa.me/5511965858142?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20o%20Loomper" 
+                   class="cta-button cta-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:contato@loomper.com.br" class="cta-button cta-email">
+                    <i class="fas fa-envelope"></i> E-mail
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SCRIPT: FAQ Interactions -->
+<script>
+function toggleFaqCategory(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.fa-chevron-down');
+    
+    // Toggle ativo
+    btn.classList.toggle('active');
+    content.classList.toggle('active');
+    
+    // Rotacionar ícone
+    if (btn.classList.contains('active')) {
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+function toggleFaqAnswer(btn) {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('.fa-chevron-down');
+    
+    // Toggle ativo
+    btn.classList.toggle('active');
+    answer.classList.toggle('active');
+    
+    // Rotacionar ícone
+    if (btn.classList.contains('active')) {
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Busca no FAQ
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('faq-search-input');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const categories = document.querySelectorAll('.faq-category');
+            
+            if (searchTerm.length === 0) {
+                // Mostrar tudo
+                faqItems.forEach(item => item.style.display = 'block');
+                categories.forEach(cat => cat.style.display = 'block');
+                return;
+            }
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Abrir categoria pai
+                    const category = item.closest('.faq-category');
+                    const categoryBtn = category.querySelector('.faq-category-btn');
+                    const categoryContent = category.querySelector('.faq-category-content');
+                    categoryBtn.classList.add('active');
+                    categoryContent.classList.add('active');
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Esconder categorias vazias
+            categories.forEach(cat => {
+                const visibleItems = cat.querySelectorAll('.faq-item[style="display: block;"]');
+                if (visibleItems.length === 0) {
+                    cat.style.display = 'none';
+                } else {
+                    cat.style.display = 'block';
+                }
+            });
+        });
+    }
+});
+</script>
+    <!-- ========================================
+         4️⃣ RODAPÉ OFICIAL
+         ======================================== -->
+    <footer class="footer-menu-style">
+        <div class="container">
+            
+            <!-- MENU PRINCIPAL -->
+            <div class="footer-nav">
+                <div class="footer-nav-item" onclick="openFooterModal('sobre')">Sobre o Loomper</div>
+                <div class="footer-nav-item" onclick="openFooterModal('praque')">Para que Serve</div>
+                <div class="footer-nav-item" onclick="openFooterModal('duvidas')">Dúvidas</div>
+                <div class="footer-nav-item" onclick="openFooterModal('legal')">Legal</div>
+                <div class="footer-nav-item" onclick="openFooterModal('stakeholders')">Stakeholders</div>
+                <div class="footer-nav-item" onclick="openFooterModal('fale')">Fale Conosco</div>
+                <div class="footer-nav-item highlight-apoie" onclick="openFooterModal('apoie')">
+                    <i class="fas fa-heart"></i> APOIE
+                </div>
+            </div>
+
+            <!-- DADOS INSTITUCIONAIS -->
+            <div class="footer-bottom-info">
+                <p class="brand-name">LOOMPER®</p>
+                <p class="brand-slogan">TECNOLOGIA • GESTÃO • PESSOAS • ESG</p>
+                
+                <!-- REDES SOCIAIS (45px OFICIAL) -->
+                <div class="social-links">
+                    <a href="https://facebook.com/loomper" target="_blank" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/loomper" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/loomper" target="_blank" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@loomper" target="_blank" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                
+                <p class="company-details">
+                    Uma empresa do Grupo Ajud.ai Brasil I.S.<br>
+                    CNPJ 59.150.688/0001-39<br>
+                    São Bernardo do Campo | SP | BRASIL
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         5️⃣ BOTÕES FLUTUANTES
+         ======================================== -->
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/5511965858142?text=Olá!%20Quero%20ser%20pioneiro%20no%20Loomper" 
+       class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- GRUPO WHATSAPP COMUNIDADE -->
+    <a href="https://chat.whatsapp.com/GuZYBWoSJqVHGWuUCS04Sr?mode=gi_t" 
+       class="whatsapp-group-float" target="_blank" aria-label="Grupo WhatsApp Loomper" 
+       title="Entrar no Grupo da Comunidade Loomper">
+        <i class="fab fa-whatsapp"></i>
+        <span>Comunidade</span>
+    </a>
+
+    <!-- TESTAR VERSÃO WEB (substituindo APK) -->
+    <a href="https://app.loomper.com.br" 
+       class="download-apk-float" target="_blank" aria-label="Testar Versão Web">
+        <i class="fas fa-desktop"></i>
+        <span>Testar Web</span>
+    </a>
+
+    <!-- ========================================
+         6️⃣ MODAIS
+         ======================================== -->
+
+    <!-- MODAL CADASTRO (FLUXO) -->
+
+    <!-- MODAL TIMELINE -->
+    <div id="modal-timeline" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-timeline')">&times;</span>
+            <div class="timeline-header">
+                <h3><i class="fas fa-road"></i> Nossa Jornada</h3>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item done">
+                    <div class="tl-icon"><i class="fas fa-check"></i></div>
+                    <div class="tl-content"><h4>Início 2025</h4><p>Pesquisa e concepção.</p></div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="tl-icon"><i class="fas fa-sync fa-spin"></i></div>
+                    <div class="tl-content"><h4>Agora</h4><p>Beta Fechado (Pioneiros).</p></div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="tl-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="tl-content"><h4>Março / 2026</h4><p>Entrega do MVP (App).</p></div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="tl-icon"><i class="fas fa-store"></i></div>
+                    <div class="tl-content"><h4>Junho / 2026</h4><p>Lançamento nas Lojas.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAIS DO RODAPÉ -->
+    <div id="modal-footer" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-footer')">&times;</span>
+            <div id="footer-modal-content">
+                <!-- Conteúdo injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         7️⃣ SCRIPTS
+         ======================================== -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
