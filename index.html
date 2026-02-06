@@ -15,44 +15,31 @@
     <style>
         :root { --p-blue: #004a99; --d-blue: #002a55; --heart-red: #e74c3c; --bg-light: #f8fafc; }
         body { font-family: 'Inter', sans-serif; margin: 0; color: #1e293b; background: var(--bg-light); line-height: 1.6; }
-        
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 45px; }
-        
         .support-btn { background: transparent; border: 2px solid var(--heart-red); color: var(--heart-red); padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
         .support-btn:hover { background: var(--heart-red); color: #fff; }
-
         .hero { display: flex; flex-wrap: wrap; align-items: center; padding: 60px 5%; gap: 40px; background: #fff; }
         .hero-text { flex: 1; min-width: 320px; }
         .hero-text h1 { font-size: 2.8rem; color: var(--d-blue); line-height: 1.1; margin-bottom: 20px; }
         .hero-disclaimer { font-size: 0.85rem; color: #94a3b8; margin-top: 15px; font-style: italic; }
-        
         .hero-image { flex: 1; min-width: 320px; text-align: center; }
         .hero-image img { width: 100%; max-width: 500px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid #fff; }
-
-        .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 60px 5%; text-align: center; }
-        .card { background: #fff; padding: 40px 30px; border-radius: 16px; border: 1px solid #e2e8f0; transition: 0.3s; }
-        .card i { font-size: 2.5rem; color: var(--p-blue); margin-bottom: 20px; }
-
-        /* Estilo do Formulário */
         .form-box { background: #f1f5f9; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; margin-top: 25px; }
-        .form-box input, .form-box select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #cbd5e1; box-sizing: border-box; }
+        .form-box input, .form-box select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #cbd5e1; box-sizing: border-box; font-family: inherit; }
         .btn-submit { width: 100%; background: var(--p-blue); color: #fff; padding: 14px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: var(--d-blue); }
-
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); }
-        .modal-content { background: #fff; margin: 5% auto; padding: 35px; width: 90%; max-width: 550px; border-radius: 20px; position: relative; }
-        
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 999; text-decoration: none; }
-        
-        footer { background: #f8fafc; padding: 50px 5%; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #64748b; }
+        .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 60px 5%; text-align: center; }
+        .card { background: #fff; padding: 40px 30px; border-radius: 16px; border: 1px solid #e2e8f0; }
+        .card i { font-size: 2.5rem; color: var(--p-blue); margin-bottom: 20px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 999; text-decoration: none; }
+        footer { background: #f8fafc; padding: 40px 5%; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #64748b; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo"><img src="assets/images/logotipo.png" alt="Loomper"></div>
-        <button class="support-btn" onclick="openModal('modal-apoio')"><i class="fas fa-heart"></i> Apoie o Projeto</button>
+        <button class="support-btn" onclick="alert('PIX: contato@loomper.com.br - Sua ajuda constrói dignidade!')"><i class="fas fa-heart"></i> Apoie o Projeto</button>
     </nav>
 
     <header class="hero">
@@ -70,42 +57,23 @@
                     </select>
                     <button type="submit" class="btn-submit" id="submitBtn">QUERO SER PIONEIRO</button>
                 </form>
-                <p id="successMsg" style="display:none; color: green; font-weight: bold; margin-top: 15px; text-align: center;">✅ Cadastro realizado! Entraremos em contato.</p>
+                <div id="successMsg" style="display:none; text-align: center;">
+                    <h3 style="color: green;">✅ Cadastro Realizado!</h3>
+                    <p>Obrigado por acreditar na Espinha Dorsal do Loomper.</p>
+                </div>
             </div>
-
             <p class="hero-disclaimer">Plataforma de tecnologia. O Loomper não realiza contratações nem intermedia pagamentos.</p>
         </div>
         <div class="hero-image">
-            <img src="assets/images/foto-motorista.jpg" alt="Aperto de mãos - Respeito e Dignidade">
+            <img src="assets/images/foto-motorista.jpg" alt="Aperto de mãos - Dignidade Loomper">
         </div>
     </header>
 
     <section class="card-container">
-        <div class="card">
-            <i class="fas fa-id-card"></i>
-            <h3>Identidade Validada</h3>
-            <p>Segurança através da tecnologia. Verificamos documentos e selfie para garantir que você saiba com quem está lidando.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <h3>Reputação Real</h3>
-            <p>Dignidade para quem trabalha sério. O histórico de serviço é o seu maior currículo dentro da estrada.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-calendar-check"></i>
-            <h3>Previsibilidade</h3>
-            <p>Agendamentos organizados para acabar com a espera incerta nos pátios. Tempo é dinheiro para todos.</p>
-        </div>
+        <div class="card"><i class="fas fa-id-card"></i><h3>Identidade Validada</h3><p>Verificamos documentos e selfie para sua segurança.</p></div>
+        <div class="card"><i class="fas fa-star"></i><h3>Reputação Real</h3><p>Seu trabalho é seu melhor currículo na estrada.</p></div>
+        <div class="card"><i class="fas fa-calendar-check"></i><h3>Previsibilidade</h3><p>Agendamentos para acabar com a espera nos pátios.</p></div>
     </section>
-
-    <div id="modal-apoio" class="modal">
-        <div class="modal-content">
-            <h2 style="color:var(--heart-red);">Inovação Nacional Social</h2>
-            <p>O Loomper é construído com recursos próprios para dignificar o setor. Cada ajuda mantém nossa tecnologia viva.</p>
-            <p><strong>PIX: contato@loomper.com.br</strong></p>
-            <button onclick="closeModal('modal-apoio')">Fechar</button>
-        </div>
-    </div>
 
     <a href="https://wa.me/5511965858142" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
@@ -115,7 +83,6 @@
     </footer>
 
     <script>
-        // CONFIGURAÇÃO FIREBASE
         const firebaseConfig = {
             apiKey: "AIzaSyARGrELEopICpikpRePB0la04wo6B8m0fA",
             authDomain: "loomper-e4c38.firebaseapp.com",
@@ -128,18 +95,18 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // CAPTURA DO FORMULÁRIO
         document.getElementById('pioneerForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
-            db.collection("leads_pioneiros").add({
+            db.collection("leads").add({
                 nome: document.getElementById('nome').value,
                 whatsapp: document.getElementById('whatsapp').value,
                 perfil: document.getElementById('perfil').value,
-                data: new Date().toLocaleString("pt-BR")
+                origem: "Landing Page v3.6",
+                data: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then(() => {
                 document.getElementById('pioneerForm').style.display = 'none';
@@ -147,14 +114,11 @@
             })
             .catch((error) => {
                 console.error("Erro:", error);
-                alert("Erro ao enviar. Tente novamente.");
+                alert("Erro ao enviar: " + error.message);
                 btn.innerText = "QUERO SER PIONEIRO";
                 btn.disabled = false;
             });
         });
-
-        function openModal(id) { document.getElementById(id).style.display = 'block'; }
-        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
     </script>
 </body>
 </html>
