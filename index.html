@@ -17,69 +17,65 @@
         body { font-family: 'Inter', sans-serif; margin: 0; color: #1e293b; background: var(--bg-light); line-height: 1.6; }
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 45px; }
-        .support-btn { background: transparent; border: 2px solid var(--heart-red); color: var(--heart-red); padding: 8px 18px; border-radius: 50px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
-        .support-btn:hover { background: var(--heart-red); color: #fff; }
-        .hero { display: flex; flex-wrap: wrap; align-items: center; padding: 60px 5%; gap: 40px; background: #fff; }
+        .hero { display: flex; flex-wrap: wrap; align-items: center; padding: 40px 5%; gap: 30px; background: #fff; }
         .hero-text { flex: 1; min-width: 320px; }
-        .hero-text h1 { font-size: 2.8rem; color: var(--d-blue); line-height: 1.1; margin-bottom: 20px; }
-        .hero-disclaimer { font-size: 0.85rem; color: #94a3b8; margin-top: 15px; font-style: italic; }
-        .hero-image { flex: 1; min-width: 320px; text-align: center; }
+        .form-box { background: #f1f5f9; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; margin-top: 20px; }
+        .form-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        input, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; box-sizing: border-box; font-family: inherit; }
+        .btn-submit { width: 100%; background: var(--p-blue); color: #fff; padding: 14px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; margin-top: 10px; }
         .hero-image img { width: 100%; max-width: 500px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid #fff; }
-        .form-box { background: #f1f5f9; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; margin-top: 25px; }
-        .form-box input, .form-box select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #cbd5e1; box-sizing: border-box; font-family: inherit; }
-        .btn-submit { width: 100%; background: var(--p-blue); color: #fff; padding: 14px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.3s; }
-        .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 60px 5%; text-align: center; }
-        .card { background: #fff; padding: 40px 30px; border-radius: 16px; border: 1px solid #e2e8f0; }
-        .card i { font-size: 2.5rem; color: var(--p-blue); margin-bottom: 20px; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 999; text-decoration: none; }
-        footer { background: #f8fafc; padding: 40px 5%; text-align: center; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #64748b; }
+        footer { background: #f8fafc; padding: 30px 5%; text-align: center; font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo"><img src="assets/images/logotipo.png" alt="Loomper"></div>
-        <button class="support-btn" onclick="alert('PIX: contato@loomper.com.br - Sua ajuda constrói dignidade!')"><i class="fas fa-heart"></i> Apoie o Projeto</button>
+        <div style="font-size: 0.8rem; font-weight: 800; color: var(--p-blue);">PROJETO PIONEIROS</div>
     </nav>
 
     <header class="hero">
         <div class="hero-text">
-            <h1>Onde a Estrada Encontra a Dignidade.</h1>
-            <p>Conectamos motoristas a profissionais verificados. O seu passado não define o seu futuro, o seu trabalho sim.</p>
+            <h1 style="font-size: 2.5rem; color: var(--d-blue); line-height: 1.1;">Onde a Estrada Encontra a Dignidade.</h1>
+            <p>Seu trabalho é seu melhor currículo. Cadastre-se para o Beta Fechado.</p>
             
             <div class="form-box">
                 <form id="pioneerForm">
-                    <input type="text" id="nome" placeholder="Seu nome completo" required>
-                    <input type="tel" id="whatsapp" placeholder="Seu WhatsApp com DDD" required>
-                    <select id="perfil">
-                        <option value="motorista">Sou Motorista / Transportador</option>
-                        <option value="chapa">Sou Chapa / Ajudante</option>
+                    <input type="text" id="nome" placeholder="Nome Completo" required style="margin-bottom: 12px;">
+                    <input type="tel" id="whatsapp" placeholder="WhatsApp com DDD" required style="margin-bottom: 12px;">
+                    
+                    <div class="form-row">
+                        <input type="text" id="cidade" placeholder="Cidade" required style="flex: 3;">
+                        <select id="uf" style="flex: 1;" required>
+                            <option value="">UF</option>
+                            <option value="SP">SP</option><option value="RJ">RJ</option><option value="MG">MG</option>
+                            <option value="RS">RS</option><option value="PR">PR</option><option value="SC">SC</option>
+                            <option value="GO">GO</option><option value="MT">MT</option><option value="MS">MS</option>
+                            </select>
+                    </div>
+
+                    <select id="perfil" required>
+                        <option value="">Selecione seu Perfil</option>
+                        <option value="motorista_autonomo">Motorista Autônomo</option>
+                        <option value="transportadora">Gestor de Transportadora</option>
+                        <option value="chapa">Chapa / Ajudante</option>
                     </select>
-                    <button type="submit" class="btn-submit" id="submitBtn">QUERO SER PIONEIRO</button>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">GARANTIR MINHA VAGA</button>
                 </form>
-                <div id="successMsg" style="display:none; text-align: center;">
-                    <h3 style="color: green;">✅ Cadastro Realizado!</h3>
-                    <p>Obrigado por acreditar na Espinha Dorsal do Loomper.</p>
+                <div id="successMsg" style="display:none; text-align: center; padding: 20px;">
+                    <h3 style="color: green; margin: 0;">✅ Excelente, Pioneiro!</h3>
+                    <p>Seus dados foram salvos na base do Loomper.</p>
                 </div>
             </div>
-            <p class="hero-disclaimer">Plataforma de tecnologia. O Loomper não realiza contratações nem intermedia pagamentos.</p>
         </div>
         <div class="hero-image">
-            <img src="assets/images/foto-motorista.jpg" alt="Aperto de mãos - Dignidade Loomper">
+            <img src="assets/images/foto-motorista.jpg" alt="Dignidade Loomper">
         </div>
     </header>
 
-    <section class="card-container">
-        <div class="card"><i class="fas fa-id-card"></i><h3>Identidade Validada</h3><p>Verificamos documentos e selfie para sua segurança.</p></div>
-        <div class="card"><i class="fas fa-star"></i><h3>Reputação Real</h3><p>Seu trabalho é seu melhor currículo na estrada.</p></div>
-        <div class="card"><i class="fas fa-calendar-check"></i><h3>Previsibilidade</h3><p>Agendamentos para acabar com a espera nos pátios.</p></div>
-    </section>
-
-    <a href="https://wa.me/5511965858142" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
     <footer>
-        <p><strong>LOOMPER</strong> - Ajud.ai Brasil Inova Simples (i.s.)</p>
-        <p>CNPJ: 59.150.688/0001-39 | São Bernardo do Campo - SP</p>
+        <p><strong>LOOMPER</strong> - CNPJ: 59.150.688/0001-39 | São Bernardo do Campo - SP</p>
     </footer>
 
     <script>
@@ -98,14 +94,16 @@
         document.getElementById('pioneerForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerText = "Enviando...";
+            btn.innerText = "Salvando...";
             btn.disabled = true;
 
             db.collection("leads").add({
                 nome: document.getElementById('nome').value,
                 whatsapp: document.getElementById('whatsapp').value,
+                cidade: document.getElementById('cidade').value,
+                uf: document.getElementById('uf').value,
                 perfil: document.getElementById('perfil').value,
-                origem: "Landing Page v3.6",
+                origem: "Landing Page v3.7",
                 data: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then(() => {
@@ -113,9 +111,8 @@
                 document.getElementById('successMsg').style.display = 'block';
             })
             .catch((error) => {
-                console.error("Erro:", error);
-                alert("Erro ao enviar: " + error.message);
-                btn.innerText = "QUERO SER PIONEIRO";
+                alert("Erro: " + error.message);
+                btn.innerText = "GARANTIR MINHA VAGA";
                 btn.disabled = false;
             });
         });
